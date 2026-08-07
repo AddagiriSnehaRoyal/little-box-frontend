@@ -1,6 +1,42 @@
+import { useState } from "react";
 import "./CreatePackage.css";
 
 function CreatePackage() {
+    const [packageData, setPackageData] = useState({
+        fromName: "",
+        toName: "",
+        title: "",
+        message: "",
+        theme: "blush"
+    });
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        setPackageData((previousData) => ({
+            ...previousData,
+            [name]: value
+        }));
+    };
+
+    const validatePackage = () => {
+        if (!packageData.fromName.trim()) {
+            alert("Please enter your name.");
+            return false;
+        }
+
+        if (!packageData.toName.trim()) {
+            alert("Please enter the recipient's name.");
+            return false;
+        }
+
+        if (!packageData.title.trim()) {
+            alert("Please give your little box a title.");
+            return false;
+        }
+
+        return true;
+    };
     return (
         <main className="create-package">
             <div className="create-container">
@@ -35,8 +71,11 @@ function CreatePackage() {
 
                             <input
                                 id="fromName"
+                                name="fromName"
                                 type="text"
-                                placeholder="  Enter your name"
+                                placeholder="Enter your name"
+                                value={packageData.fromName}
+                                onChange={handleChange}
                             />
                         </div>
 
@@ -53,8 +92,11 @@ function CreatePackage() {
 
                             <input
                                 id="toName"
+                                name="toName"
                                 type="text"
-                                placeholder="  Who is this little box for?"
+                                placeholder="Who is this little box for?"
+                                value={packageData.toName}
+                                onChange={handleChange}
                             />
                         </div>
 
@@ -71,8 +113,11 @@ function CreatePackage() {
 
                             <input
                                 id="packageTitle"
+                                name="title"
                                 type="text"
                                 placeholder="Example: A little piece of us"
+                                value={packageData.title}
+                                onChange={handleChange}
                             />
                         </div>
 
@@ -83,8 +128,11 @@ function CreatePackage() {
 
                             <textarea
                                 id="packageMessage"
+                                name="message"
                                 rows="4"
                                 placeholder="Write a small introduction to this box..."
+                                value={packageData.message}
+                                onChange={handleChange}
                             ></textarea>
                         </div>
 
@@ -92,46 +140,88 @@ function CreatePackage() {
 
                     <div className="form-group">
 
-  <label>
-    Choose a Theme
-  </label>
+                        <label>
+                            Choose a Theme
+                        </label>
 
-  <div className="theme-options">
+                        <div className="theme-options">
 
-    <button type="button" className="theme-option selected">
-      🌸
-      <span>Blush</span>
-    </button>
+                            <button
+                                type="button"
+                                className={`theme-option ${packageData.theme === "blush" ? "selected" : ""
+                                    }`}
+                                onClick={() =>
+                                    setPackageData((previousData) => ({
+                                        ...previousData,
+                                        theme: "blush"
+                                    }))
+                                }
+                            >
+                                🌸
+                                <span>Blush</span>
+                            </button>
 
-    <button type="button" className="theme-option">
-      🌙
-      <span>Midnight</span>
-    </button>
+                            <button
+                                type="button"
+                                className={`theme-option ${packageData.theme === "midnight" ? "selected" : ""
+                                    }`}
+                                onClick={() =>
+                                    setPackageData((previousData) => ({
+                                        ...previousData,
+                                        theme: "midnight"
+                                    }))
+                                }
+                            >
+                                🌙
+                                <span>Midnight</span>
+                            </button>
 
-    <button type="button" className="theme-option">
-      🌿
-      <span>Garden</span>
-    </button>
+                            <button
+                                type="button"
+                                className={`theme-option ${packageData.theme === "garden" ? "selected" : ""
+                                    }`}
+                                onClick={() =>
+                                    setPackageData((previousData) => ({
+                                        ...previousData,
+                                        theme: "garden"
+                                    }))
+                                }
+                            >
+                                🌿
+                                <span>Garden</span>
+                            </button>
 
-    <button type="button" className="theme-option">
-      ☁️
-      <span>Cloud</span>
-    </button>
+                            <button
+                                type="button"
+                                className={`theme-option ${packageData.theme === "cloud" ? "selected" : ""
+                                    }`}
+                                onClick={() =>
+                                    setPackageData((previousData) => ({
+                                        ...previousData,
+                                        theme: "cloud"
+                                    }))
+                                }
+                            >
+                                ☁️
+                                <span>Cloud</span>
+                            </button>
 
-  </div>
+                        </div>
 
-</div>
 
-<div className="form-actions">
+                    </div>
 
-  <button
-    type="button"
-    className="primary-button"
-  >
-    Continue to Add Content →
-  </button>
+                    <div className="form-actions">
 
-</div>
+                        <button
+                            type="button"
+                            className="primary-button"
+                            onClick={validatePackage}
+                        >
+                            Continue to Add Content →
+                        </button>
+
+                    </div>
 
                 </div>
 
