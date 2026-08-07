@@ -1,0 +1,141 @@
+.note-editor {
+  background: #fffdfc;
+  border: 1px solid #f0e3e5;
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+.note-editor-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.note-editor-header p {
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.note-editor-header h2 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.note-editor-header span {
+  color: #756565;
+  font-size: 14px;
+}
+
+.note-form {
+  max-width: 700px;
+  margin: auto;
+}
+
+.note-form .form-group {
+  margin-bottom: 25px;
+}
+
+.note-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.note-form input,
+.note-form textarea {
+  width: 100%;
+  border: 1px solid #eadbdd;
+  border-radius: 12px;
+  padding: 13px 15px;
+  outline: none;
+  background: white;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.note-form input:focus,
+.note-form textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(233, 166, 180, 0.15);
+}
+
+.note-form textarea {
+  resize: vertical;
+}
+
+.note-style-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.note-style-option {
+  border: 2px solid #f0e3e5;
+  background: white;
+  border-radius: 14px;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+
+  cursor: pointer;
+  color: var(--text);
+
+  transition: 0.2s ease;
+}
+
+.note-style-option:hover {
+  transform: translateY(-2px);
+}
+
+.note-style-option.selected {
+  border-color: var(--primary);
+  background: var(--secondary);
+}
+
+.note-style-option span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.note-editor-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.cancel-button {
+  border: 1px solid #eadbdd;
+  background: white;
+  color: var(--text);
+
+  padding: 13px 22px;
+  border-radius: 999px;
+
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .note-editor {
+    padding: 22px 16px;
+  }
+
+  .note-style-options {
+    grid-template-columns: 1fr;
+  }
+
+  .note-editor-actions {
+    flex-direction: column-reverse;
+  }
+
+  .note-editor-actions button {
+    width: 100%;
+  }
+}

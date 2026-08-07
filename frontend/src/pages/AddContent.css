@@ -185,3 +185,66 @@
   }
 
 }
+
+.added-notes {
+  margin-top: 40px;
+}
+
+.added-notes h2 {
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.note-card {
+  background: #fffaf5;
+  border: 1px solid #f0e3e5;
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.note-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.note-card-top span {
+  font-size: 22px;
+}
+
+.note-card-top button {
+  border: none;
+  background: transparent;
+  color: #a56a76;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.note-card h3 {
+  margin-bottom: 10px;
+}
+
+.note-card p {
+  color: #675858;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.note-card.simple {
+  background: white;
+}
+
+.note-card.cute {
+  background: #fff5f7;
+}
+
+.note-card.letter {
+  background: #fffaf0;
+}
