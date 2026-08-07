@@ -11,7 +11,7 @@ function Home() {
         </p>
 
         <button className="create-button">
-          ✨ Create My Box
+           Create My Box
         </button>
       </div>
     </main>
