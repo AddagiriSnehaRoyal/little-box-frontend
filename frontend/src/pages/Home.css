@@ -1,0 +1,39 @@
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.home-content {
+  max-width: 700px;
+}
+
+.home h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 56px;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.home p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.create-button {
+  border: none;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.create-button:hover {
+  transform: translateY(-3px);
+}
