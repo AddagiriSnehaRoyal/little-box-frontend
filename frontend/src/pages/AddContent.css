@@ -1,0 +1,187 @@
+.add-content {
+  min-height: calc(100vh - 75px);
+  padding: 70px 20px;
+
+  background: var(--background);
+}
+
+.add-content-container {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.content-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.content-heading p {
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.content-heading h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 48px;
+  color: var(--text);
+  margin-bottom: 15px;
+}
+
+.content-heading span {
+  color: #756565;
+  font-size: 15px;
+}
+
+/* =========================
+   PANEL
+========================= */
+
+.content-panel {
+  background: white;
+  padding: 40px;
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 15px 40px rgba(80, 50, 50, 0.07);
+}
+
+.content-panel h2 {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.content-subtitle {
+  text-align: center;
+  color: #756565;
+  margin-bottom: 35px;
+}
+
+/* =========================
+   CONTENT CARDS
+========================= */
+
+.content-type-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+}
+
+.content-type-card {
+  border: 2px solid #f0e3e5;
+
+  background: #fffdfc;
+
+  border-radius: 18px;
+
+  padding: 25px 15px;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  color: var(--text);
+
+  transition: 0.25s ease;
+}
+
+.content-type-card:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--primary);
+}
+
+.content-type-card.selected {
+  border-color: var(--primary);
+
+  background: var(--secondary);
+
+  transform: translateY(-3px);
+}
+
+.content-icon {
+  display: block;
+
+  font-size: 38px;
+
+  margin-bottom: 12px;
+}
+
+.content-type-card h3 {
+  font-size: 16px;
+
+  margin-bottom: 7px;
+}
+
+.content-type-card p {
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  color: #756565;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.content-actions {
+  margin-top: 40px;
+
+  display: flex;
+
+  justify-content: flex-end;
+}
+
+.content-actions .primary-button {
+  border: none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+  .content-type-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .add-content {
+    padding: 50px 15px;
+  }
+
+  .content-heading h1 {
+    font-size: 38px;
+  }
+
+  .content-panel {
+    padding: 25px 18px;
+  }
+
+  .content-type-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content-actions {
+    justify-content: stretch;
+  }
+
+  .content-actions .primary-button {
+    width: 100%;
+  }
+
+}
