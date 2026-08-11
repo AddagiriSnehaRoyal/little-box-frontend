@@ -1,0 +1,234 @@
+.drawing-uploader {
+    width: 100%;
+    margin: 18px 0;
+}
+
+
+/* HEADER */
+
+.drawing-header {
+    margin-bottom: 12px;
+}
+
+.drawing-header h3 {
+    margin: 0 0 4px;
+    font-size: 20px;
+    color: #5a3040;
+}
+
+.drawing-header p {
+    margin: 0;
+    font-size: 13px;
+    color: #806872;
+}
+
+
+/* DRAWING BOARD */
+
+.drawing-board {
+    width: 100%;
+    border: 1px solid #ead6dc;
+    border-radius: 14px;
+    background: #fffdfd;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(90, 48, 64, 0.06);
+}
+
+.drawing-canvas {
+    display: block;
+
+    width: 100%;
+    height: 300px;
+
+    background: #ffffff;
+
+    cursor: crosshair;
+
+    touch-action: none;
+}
+
+
+/* TOOLBAR */
+
+.drawing-toolbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 12px;
+    padding: 10px 12px;
+
+    border: 1px solid #ead6dc;
+    border-radius: 12px;
+
+    background: #fff8fa;
+}
+
+
+/* TOOL GROUP */
+
+.tool-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tool-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #765763;
+}
+
+
+/* COLORS */
+
+.color-palette {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.color-button {
+    width: 23px;
+    height: 23px;
+
+    padding: 0;
+
+    border: 2px solid transparent;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: transform 0.15s ease;
+}
+
+.color-button:hover {
+    transform: scale(1.12);
+}
+
+.color-button.active {
+    border-color: #5a3040;
+
+    box-shadow: 0 0 0 2px #ffffff;
+}
+
+
+/* BRUSH */
+
+.brush-options {
+    display: flex;
+    gap: 5px;
+}
+
+.brush-button {
+    width: 28px;
+    height: 28px;
+
+    padding: 0;
+
+    border: 1px solid #ead6dc;
+    border-radius: 7px;
+
+    background: white;
+
+    color: #5a3040;
+
+    cursor: pointer;
+}
+
+.brush-button.active {
+    border-color: #c9899e;
+    background: #fbe7ed;
+}
+
+
+/* TOOL BUTTONS */
+
+.tool-button {
+    padding: 7px 11px;
+
+    border: 1px solid #ead6dc;
+    border-radius: 8px;
+
+    background: white;
+
+    color: #5a3040;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.tool-button:hover {
+    background: #fff0f4;
+}
+
+.tool-button.active-tool {
+    background: #fbe0e8;
+    border-color: #c9899e;
+}
+
+.clear-button {
+    margin-left: auto;
+}
+
+
+/* ADD DRAWING */
+
+.add-drawing-button {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 11px 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #e9aabd;
+
+    color: #5a3040;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: transform 0.15s ease,
+                box-shadow 0.15s ease;
+}
+
+.add-drawing-button:hover {
+    transform: translateY(-1px);
+
+    box-shadow: 0 5px 12px rgba(90, 48, 64, 0.12);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .drawing-canvas {
+        height: 250px;
+    }
+
+    .drawing-toolbar {
+        gap: 9px;
+    }
+
+    .clear-button {
+        margin-left: 0;
+    }
+
+    .tool-group {
+        width: 100%;
+    }
+
+    .color-palette {
+        flex-wrap: wrap;
+    }
+
+}

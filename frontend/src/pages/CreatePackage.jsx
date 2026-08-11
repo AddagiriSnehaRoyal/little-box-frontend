@@ -1,15 +1,11 @@
-import { useState } from "react";
+import { usePackage } from "../context/PackageContext";
+import { useNavigate } from "react-router-dom";
 import "./CreatePackage.css";
 
 function CreatePackage() {
-    const [packageData, setPackageData] = useState({
-        fromName: "",
-        toName: "",
-        title: "",
-        message: "",
-        theme: "blush"
-    });
-
+    const { packageData, setPackageData } = usePackage();
+    const navigate = useNavigate();
+    console.log("PACKAGE DATA:", packageData);
     const handleChange = (event) => {
         const { name, value } = event.target;
 
@@ -36,6 +32,16 @@ function CreatePackage() {
         }
 
         return true;
+    };
+
+    const handleContinue = () => {
+        const isValid = validatePackage();
+
+        if (!isValid) {
+            return;
+        }
+
+        navigate("/create/content");
     };
     return (
         <main className="create-package">
@@ -216,16 +222,22 @@ function CreatePackage() {
                         <button
                             type="button"
                             className="primary-button"
-                            onClick={validatePackage}
+                            onClick={handleContinue}
                         >
                             Continue to Add Content →
                         </button>
 
                     </div>
 
+                    <pre>
+                        {JSON.stringify(packageData, null, 2)}
+                    </pre>
+
                 </div>
 
+
             </div>
+
         </main>
     );
 }

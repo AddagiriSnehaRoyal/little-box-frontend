@@ -1,0 +1,282 @@
+/* ================================
+   SONG PICKER
+================================ */
+
+.song-picker {
+    margin: 30px 0;
+    padding: 30px;
+
+    border: 2px dashed #e6c9d8;
+    border-radius: 20px;
+
+    background: #fff9fb;
+}
+
+.song-picker h3 {
+    margin: 0 0 8px;
+
+    color: #5a3040;
+    font-size: 22px;
+}
+
+.song-description {
+    margin-bottom: 25px;
+
+    color: #806872;
+    font-size: 14px;
+}
+
+
+/* ================================
+   SONG FORM
+================================ */
+
+.song-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.song-form label {
+    margin-top: 10px;
+
+    color: #5a3040;
+    font-weight: 500;
+}
+
+.song-form input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px 14px;
+
+    border: 1px solid #e5cbd4;
+    border-radius: 10px;
+
+    background: white;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+.song-form input:focus {
+    border-color: #d99aae;
+
+    box-shadow:
+        0 0 0 3px rgba(217, 154, 174, 0.12);
+}
+
+
+/* ================================
+   ADD SONG BUTTON
+================================ */
+
+.song-form button {
+    margin-top: 20px;
+
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #f3c4d4;
+    color: #5a3040;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.song-form button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(90, 48, 64, 0.08);
+}
+
+
+/* ================================
+   ADDED SONGS
+================================ */
+
+.added-songs {
+    width: 100%;
+
+    margin-top: 40px;
+    padding-top: 25px;
+
+    border-top: 1px solid #eadce2;
+}
+
+.added-songs h2 {
+    margin-bottom: 20px;
+
+    color: #5a3040;
+}
+
+
+/* ================================
+   SONG LIST
+================================ */
+
+.songs-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(260px, 1fr));
+
+    gap: 20px;
+}
+
+
+/* ================================
+   SONG CARD
+================================ */
+
+.song-card {
+    box-sizing: border-box;
+
+    padding: 24px;
+
+    background: #fff9fb;
+
+    border: 1px solid #ead5dd;
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 6px 18px rgba(90, 48, 64, 0.06);
+
+    transition: 0.2s ease;
+}
+
+.song-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 22px rgba(90, 48, 64, 0.09);
+}
+
+
+/* Song icon */
+
+.song-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 14px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f7dce5;
+
+    font-size: 28px;
+}
+
+
+/* Song title */
+
+.song-card h3 {
+    margin: 8px 0;
+
+    color: #5a3040;
+
+    font-size: 18px;
+}
+
+
+/* Artist */
+
+.song-card p {
+    margin: 8px 0 18px;
+
+    color: #806872;
+
+    font-size: 14px;
+}
+
+
+/* Open Song button */
+
+.open-song-button {
+    display: block;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    margin-bottom: 10px;
+    padding: 11px 15px;
+
+    border-radius: 10px;
+
+    background: #f3c4d4;
+    color: #5a3040;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.2s ease;
+}
+
+.open-song-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Remove button */
+
+.song-card button {
+    width: 100%;
+
+    padding: 10px 15px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #f1e3e8;
+    color: #6b4b57;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+.song-card button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .song-picker {
+        padding: 20px;
+    }
+
+    .songs-list {
+        grid-template-columns: 1fr;
+    }
+
+    .song-card {
+        padding: 20px;
+    }
+
+}
