@@ -19,6 +19,8 @@ function PackagePreview() {
         setPackageData
     } = usePackage();
 
+    console.log("SELECTED THEME:", packageData?.theme);
+
     const [loading, setLoading] = useState(true);
     const [packageFound, setPackageFound] = useState(false);
 
@@ -68,8 +70,8 @@ function PackagePreview() {
             try {
 
                 const response = await fetch(
-    `https://little-box-backend.onrender.com/api/packages/${id}`
-);
+                    `https://little-box-backend.onrender.com/api/packages/${id}`
+                );
 
 
                 const data = await response.json();
@@ -453,7 +455,9 @@ function PackagePreview() {
 
     return (
 
-        <main className="package-preview">
+        <main
+            className={`package-preview theme-${packageData.theme}`}
+        >
 
             <div className="preview-container">
 
@@ -479,9 +483,7 @@ function PackagePreview() {
 
                 {/* MAIN BOX */}
 
-                <div
-                    className={`preview-box theme-${packageData.theme}`}
-                >
+                <div className="preview-box">
 
 
                     {/* FROM / TO */}
@@ -567,10 +569,19 @@ function PackagePreview() {
                                         {/* NOTE */}
 
                                         {content.type === "note" && (
+                                            <div
+                                                className={`note-preview note-${content.style || "simple"} theme-${packageData.theme || "blush"}`}
+                                            >
 
-                                            <>
+                                                <div className="note-decoration">
+                                                    {content.style === "cute"
+                                                        ? "🌸"
+                                                        : content.style === "letter"
+                                                            ? "💌"
+                                                            : "🤍"}
+                                                </div>
 
-                                                <div className="preview-content-icon">
+                                                <div className="note-icon">
                                                     💌
                                                 </div>
 
@@ -582,8 +593,13 @@ function PackagePreview() {
                                                     {content.text}
                                                 </p>
 
-                                            </>
+                                                {content.style === "letter" && (
+                                                    <div className="note-signature">
+                                                        With a little thought ♡
+                                                    </div>
+                                                )}
 
+                                            </div>
                                         )}
 
 

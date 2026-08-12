@@ -1,0 +1,1401 @@
+/* =========================================
+   PACKAGE REVEAL PAGE
+========================================= */
+
+.reveal-page {
+    --reveal-bg: #fff8fb;
+    --reveal-card: #ffffff;
+    --reveal-primary: #d98fa7;
+    --reveal-secondary: #f3c4d4;
+    --reveal-text: #5a3040;
+    --reveal-muted: #806872;
+
+    position: relative;
+    min-height: calc(100vh - 74px);
+
+    padding: 70px 20px 80px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            color-mix(in srgb, var(--reveal-primary) 18%, transparent),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            color-mix(in srgb, var(--reveal-secondary) 25%, transparent),
+            transparent 30%
+        ),
+        var(--reveal-bg);
+
+    color: var(--reveal-text);
+
+    transition:
+        background 0.8s ease,
+        color 0.6s ease;
+}
+
+
+/* =========================================
+   THEMES
+========================================= */
+
+/* BLUSH */
+
+.reveal-page.theme-blush {
+    --reveal-bg: #fff7fa;
+    --reveal-card: #ffffff;
+    --reveal-primary: #d98fa7;
+    --reveal-secondary: #f3c4d4;
+    --reveal-text: #5a3040;
+    --reveal-muted: #806872;
+}
+
+
+/* MIDNIGHT */
+
+.reveal-page.theme-midnight {
+    --reveal-bg: #111528;
+    --reveal-card: #191d35;
+    --reveal-primary: #9b8cff;
+    --reveal-secondary: #6266c9;
+    --reveal-text: #f1efff;
+    --reveal-muted: #b9b6d5;
+}
+
+
+/* GARDEN */
+
+.reveal-page.theme-garden {
+    --reveal-bg: #f3f8ee;
+    --reveal-card: #ffffff;
+    --reveal-primary: #6f9d68;
+    --reveal-secondary: #b8cf9d;
+    --reveal-text: #304d34;
+    --reveal-muted: #687d69;
+}
+
+
+/* CLOUD */
+
+.reveal-page.theme-cloud {
+    --reveal-bg: #eef8ff;
+    --reveal-card: #ffffff;
+    --reveal-primary: #70b7df;
+    --reveal-secondary: #b8ddf1;
+    --reveal-text: #31546a;
+    --reveal-muted: #718b9b;
+}
+
+
+/* =========================================
+   DECORATIONS
+========================================= */
+
+.reveal-decoration {
+    position: absolute;
+
+    color: var(--reveal-primary);
+
+    opacity: 0.25;
+
+    pointer-events: none;
+
+    animation: revealDecorationFloat 6s ease-in-out infinite;
+
+    transition: color 0.7s ease;
+}
+
+.reveal-decoration-one {
+    top: 12%;
+    left: 8%;
+
+    font-size: 45px;
+}
+
+.reveal-decoration-two {
+    top: 30%;
+    right: 8%;
+
+    font-size: 42px;
+
+    animation-delay: 1s;
+}
+
+.reveal-decoration-three {
+    bottom: 18%;
+    left: 10%;
+
+    font-size: 50px;
+
+    animation-delay: 2s;
+}
+
+.reveal-decoration-four {
+    bottom: 25%;
+    right: 12%;
+
+    font-size: 35px;
+
+    animation-delay: 1.5s;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.reveal-intro {
+    position: relative;
+
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    z-index: 2;
+
+    animation: revealFadeIn 0.8s ease;
+}
+
+.reveal-eyebrow {
+    margin: 0 0 10px;
+
+    color: var(--reveal-primary);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    letter-spacing: 0.4px;
+}
+
+.reveal-intro h1 {
+    margin: 0 0 12px;
+
+    color: var(--reveal-text);
+
+    font-family: "Pacifico", cursive;
+
+    font-size: clamp(38px, 7vw, 58px);
+    font-weight: 400;
+
+    transition: color 0.6s ease;
+}
+
+.reveal-subtitle {
+    margin: 0;
+
+    color: var(--reveal-muted);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   GIFT AREA
+========================================= */
+
+.reveal-gift {
+    position: relative;
+
+    width: 310px;
+    height: 280px;
+
+    margin: 20px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gift-glow {
+    position: absolute;
+
+    width: 210px;
+    height: 210px;
+
+    border-radius: 50%;
+
+    background: color-mix(
+        in srgb,
+        var(--reveal-primary) 18%,
+        transparent
+    );
+
+    filter: blur(35px);
+
+    animation: giftGlow 3s ease-in-out infinite;
+}
+
+
+/* =========================================
+   BOX
+========================================= */
+
+.reveal-box {
+    position: relative;
+
+    width: 180px;
+    height: 145px;
+
+    animation: giftFloat 4s ease-in-out infinite;
+
+    transform-origin: center bottom;
+}
+
+
+/* =========================================
+   GIFT BODY
+========================================= */
+
+.reveal-body {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 180px;
+    height: 115px;
+
+    border-radius: 8px 8px 20px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--reveal-primary),
+            var(--reveal-secondary)
+        );
+
+    box-shadow:
+        0 20px 35px
+        color-mix(
+            in srgb,
+            var(--reveal-text) 18%,
+            transparent
+        );
+
+    transition:
+        background 0.8s ease,
+        box-shadow 0.8s ease;
+}
+
+
+/* =========================================
+   LID
+========================================= */
+
+.reveal-lid {
+    position: absolute;
+
+    top: 0;
+    left: -10px;
+
+    width: 200px;
+    height: 45px;
+
+    border-radius: 10px 10px 7px 7px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--reveal-primary),
+            var(--reveal-secondary)
+        );
+
+    box-shadow:
+        0 8px 15px
+        color-mix(
+            in srgb,
+            var(--reveal-text) 15%,
+            transparent
+        );
+
+    z-index: 4;
+
+    transition:
+        background 0.8s ease,
+        transform 1.2s cubic-bezier(.22, 1, .36, 1);
+}
+
+.reveal-lid span {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: var(--reveal-bg);
+
+    font-size: 25px;
+
+    transition: color 0.8s ease;
+}
+
+
+/* =========================================
+   RIBBONS
+========================================= */
+
+.lid-ribbon {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 30px;
+    height: 100%;
+
+    background: color-mix(
+        in srgb,
+        var(--reveal-bg) 55%,
+        var(--reveal-primary)
+    );
+
+    opacity: 0.8;
+}
+
+.body-ribbon {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 30px;
+    height: 100%;
+
+    transform: translateX(-50%);
+
+    background: color-mix(
+        in srgb,
+        var(--reveal-bg) 55%,
+        var(--reveal-primary)
+    );
+
+    opacity: 0.75;
+}
+
+.body-heart {
+    position: absolute;
+
+    left: 50%;
+    top: 55%;
+
+    transform: translate(-50%, -50%);
+
+    color: var(--reveal-bg);
+
+    font-size: 35px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================================
+   FLOATING GIFT DECORATIONS
+========================================= */
+
+.gift-floating {
+    position: absolute;
+
+    color: var(--reveal-primary);
+
+    font-size: 27px;
+
+    animation: floatingGiftDecoration 3s ease-in-out infinite;
+}
+
+.gift-floating-one {
+    top: 55px;
+    left: 25px;
+}
+
+.gift-floating-two {
+    top: 35px;
+    right: 25px;
+
+    font-size: 21px;
+
+    animation-delay: 1s;
+}
+
+.gift-floating-three {
+    bottom: 40px;
+    right: 35px;
+
+    font-size: 20px;
+
+    animation-delay: 1.7s;
+}
+
+
+/* =========================================
+   OPENING ANIMATION
+========================================= */
+
+.reveal-gift.opening .reveal-box {
+    animation:
+        giftOpenShake 0.7s ease-in-out,
+        giftFloat 4s ease-in-out 0.7s infinite;
+}
+
+.reveal-gift.opening .reveal-lid {
+    animation: lidOpen 1.3s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+.reveal-gift.opening .gift-glow {
+    animation:
+        giftGlowStrong 1.8s ease-in-out forwards;
+}
+
+
+/* =========================================
+   HINT
+========================================= */
+
+.reveal-hint {
+    margin: 0 0 18px;
+
+    color: var(--reveal-muted);
+
+    font-size: 13px;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   OPEN BUTTON
+========================================= */
+
+.reveal-open-button {
+    min-width: 210px;
+
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--reveal-primary),
+            var(--reveal-secondary)
+        );
+
+    color: var(--reveal-text);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        color-mix(
+            in srgb,
+            var(--reveal-primary) 25%,
+            transparent
+        );
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.3s ease;
+}
+
+.reveal-open-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px
+        color-mix(
+            in srgb,
+            var(--reveal-primary) 35%,
+            transparent
+        );
+}
+
+.reveal-open-button:active {
+    transform: translateY(0);
+}
+
+.reveal-open-button:disabled {
+    cursor: default;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================
+   REVEALED CONTENT
+========================================= */
+
+.revealed-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    z-index: 2;
+
+    animation: packageReveal 1.2s ease;
+}
+
+
+/* =========================================
+   REVEALED HEADER
+========================================= */
+
+.revealed-header {
+    margin-bottom: 35px;
+}
+
+.revealed-header p {
+    margin: 0 0 7px;
+
+    color: var(--reveal-primary);
+
+    font-size: 14px;
+}
+
+.revealed-header h1 {
+    margin: 0;
+
+    color: var(--reveal-text);
+
+    font-family: "Pacifico", cursive;
+
+    font-size: clamp(38px, 7vw, 55px);
+    font-weight: 400;
+}
+
+.revealed-header span {
+    color: var(--reveal-muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   MAIN MESSAGE
+========================================= */
+
+.revealed-message {
+    position: relative;
+
+    max-width: 700px;
+
+    margin: 0 auto 35px;
+
+    padding: 40px 35px;
+
+    border:
+        1px solid
+        color-mix(
+            in srgb,
+            var(--reveal-primary) 22%,
+            transparent
+        );
+
+    border-radius: 28px;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--reveal-card) 94%,
+            var(--reveal-primary)
+        );
+
+    box-shadow:
+        0 20px 50px
+        color-mix(
+            in srgb,
+            var(--reveal-text) 10%,
+            transparent
+        );
+
+    backdrop-filter: blur(12px);
+}
+
+.message-icon {
+    display: flex;
+
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 13px;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--reveal-primary) 13%,
+            transparent
+        );
+
+    font-size: 26px;
+}
+
+.message-label {
+    margin: 0 0 8px;
+
+    color: var(--reveal-primary);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.revealed-message h2 {
+    margin: 0 0 15px;
+
+    color: var(--reveal-text);
+
+    font-family: "Pacifico", cursive;
+
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.message-text {
+    max-width: 570px;
+
+    margin: 0 auto;
+
+    color: var(--reveal-muted);
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    white-space: pre-wrap;
+}
+
+
+/* =========================================
+   CONTENT GRID
+========================================= */
+
+.revealed-contents {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 22px;
+
+    margin-top: 25px;
+}
+
+.revealed-content-card {
+    padding: 28px 24px;
+
+    border:
+        1px solid
+        color-mix(
+            in srgb,
+            var(--reveal-primary) 16%,
+            transparent
+        );
+
+    border-radius: 22px;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--reveal-card) 94%,
+            var(--reveal-primary)
+        );
+
+    box-shadow:
+        0 12px 30px
+        color-mix(
+            in srgb,
+            var(--reveal-text) 7%,
+            transparent
+        );
+
+    animation: contentCardReveal 0.8s ease both;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.revealed-content-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 18px 35px
+        color-mix(
+            in srgb,
+            var(--reveal-primary) 13%,
+            transparent
+        );
+}
+
+.content-card-icon {
+    margin-bottom: 10px;
+
+    font-size: 30px;
+}
+
+.revealed-content-card h3 {
+    margin: 0 0 12px;
+
+    color: var(--reveal-text);
+
+    font-size: 19px;
+}
+
+.revealed-content-card p {
+    color: var(--reveal-muted);
+
+    line-height: 1.7;
+
+    white-space: pre-wrap;
+}
+
+
+/* =========================================
+   NOTE
+========================================= */
+
+.reveal-note strong {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--reveal-text);
+
+    font-family: "Pacifico", cursive;
+
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.reveal-note p {
+    margin: 0;
+
+    color: var(--reveal-muted);
+
+    line-height: 1.8;
+
+    white-space: pre-wrap;
+}
+
+
+/* =========================================
+   PHOTO
+========================================= */
+
+.reveal-photo {
+    display: block;
+
+    width: 100%;
+    max-height: 350px;
+
+    margin: 12px auto 0;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+}
+
+
+/* =========================================
+   VIDEO
+========================================= */
+
+.reveal-video {
+    width: 100%;
+
+    margin-top: 10px;
+
+    border-radius: 15px;
+}
+
+
+/* =========================================
+   AUDIO
+========================================= */
+
+.reveal-audio {
+    width: 100%;
+
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   DRAWING
+========================================= */
+
+.reveal-drawing {
+    display: block;
+
+    width: 100%;
+    max-height: 350px;
+
+    margin: 12px auto 0;
+
+    padding: 8px;
+
+    object-fit: contain;
+
+    border:
+        1px solid
+        color-mix(
+            in srgb,
+            var(--reveal-primary) 15%,
+            transparent
+        );
+
+    border-radius: 15px;
+
+    background: white;
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+.reveal-link {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--reveal-primary) 14%,
+            transparent
+        );
+
+    color: var(--reveal-text);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.reveal-link:hover {
+    transform: translateY(-2px);
+
+    background:
+        color-mix(
+            in srgb,
+            var(--reveal-primary) 22%,
+            transparent
+        );
+}
+
+
+/* =========================================
+   GIFT CONTENT
+========================================= */
+
+.mini-gift {
+    margin-bottom: 10px;
+
+    font-size: 45px;
+
+    animation: miniGiftFloat 3s ease-in-out infinite;
+}
+
+.reveal-gift-content p {
+    color: var(--reveal-muted);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   ENDING
+========================================= */
+
+.reveal-ending {
+    margin: 55px auto 25px;
+
+    text-align: center;
+}
+
+.ending-heart {
+    margin-bottom: 10px;
+
+    color: var(--reveal-primary);
+
+    font-size: 35px;
+
+    animation: endingHeart 2.5s ease-in-out infinite;
+}
+
+.reveal-ending p {
+    margin: 0 0 7px;
+
+    color: var(--reveal-text);
+
+    font-size: 15px;
+}
+
+.reveal-ending span {
+    color: var(--reveal-muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   HOME BUTTON
+========================================= */
+
+.reveal-home-button {
+    margin-top: 5px;
+
+    padding: 11px 18px;
+
+    border: 1px solid
+        color-mix(
+            in srgb,
+            var(--reveal-primary) 25%,
+            transparent
+        );
+
+    border-radius: 11px;
+
+    background: transparent;
+
+    color: var(--reveal-primary);
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.reveal-home-button:hover {
+    transform: translateY(-2px);
+
+    background:
+        color-mix(
+            in srgb,
+            var(--reveal-primary) 10%,
+            transparent
+        );
+}
+
+
+/* =========================================
+   NOT FOUND
+========================================= */
+
+.reveal-not-found {
+    width: min(500px, 100%);
+
+    margin: 100px auto;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background: var(--reveal-card);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.08);
+}
+
+.reveal-not-found-icon {
+    margin-bottom: 15px;
+
+    font-size: 50px;
+}
+
+.reveal-not-found h1 {
+    margin: 0 0 10px;
+
+    color: var(--reveal-text);
+
+    font-family: "Pacifico", cursive;
+
+    font-weight: 400;
+}
+
+.reveal-not-found p {
+    color: var(--reveal-muted);
+
+    line-height: 1.7;
+}
+
+.reveal-not-found button {
+    margin-top: 15px;
+
+    padding: 11px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--reveal-primary);
+
+    color: var(--reveal-bg);
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes revealFadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes giftFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(-1deg);
+    }
+}
+
+
+@keyframes giftGlow {
+
+    0%,
+    100% {
+        transform: scale(0.95);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 0.8;
+    }
+}
+
+
+@keyframes giftGlowStrong {
+
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.4);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.7);
+        opacity: 0;
+    }
+}
+
+
+@keyframes giftOpenShake {
+
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+
+    25% {
+        transform: translateY(-4px) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(2px) rotate(2deg);
+    }
+
+    75% {
+        transform: translateY(-3px) rotate(-1deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+
+@keyframes lidOpen {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+
+    45% {
+        transform:
+            translateY(-15px)
+            rotate(-3deg);
+    }
+
+    100% {
+        transform:
+            translate(-20px, -70px)
+            rotate(-12deg);
+    }
+}
+
+
+@keyframes floatingGiftDecoration {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateY(-12px);
+        opacity: 1;
+    }
+}
+
+
+@keyframes revealDecorationFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(6deg);
+    }
+}
+
+
+@keyframes packageReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes contentCardReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+@keyframes miniGiftFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+
+@keyframes endingHeart {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 700px) {
+
+    .reveal-page {
+        padding: 55px 18px 60px;
+    }
+
+    .reveal-decoration {
+        opacity: 0.13;
+    }
+
+    .revealed-message {
+        padding: 32px 25px;
+    }
+
+    .revealed-contents {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .reveal-page {
+        min-height: calc(100vh - 68px);
+
+        padding: 40px 15px 50px;
+    }
+
+    .reveal-intro h1 {
+        font-size: 38px;
+    }
+
+    .reveal-subtitle {
+        font-size: 14px;
+    }
+
+    .reveal-gift {
+        width: 260px;
+        height: 250px;
+    }
+
+    .reveal-box {
+        transform: scale(0.85);
+    }
+
+    .reveal-gift.opening .reveal-box {
+        animation:
+            giftOpenShake 0.7s ease-in-out,
+            giftFloat 4s ease-in-out 0.7s infinite;
+    }
+
+    .reveal-open-button {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .revealed-header {
+        margin-bottom: 25px;
+    }
+
+    .revealed-header h1 {
+        font-size: 40px;
+    }
+
+    .revealed-message {
+        padding: 30px 20px;
+
+        border-radius: 22px;
+    }
+
+    .revealed-message h2 {
+        font-size: 26px;
+    }
+
+    .message-text {
+        font-size: 14px;
+    }
+
+    .revealed-content-card {
+        padding: 24px 18px;
+    }
+
+    .reveal-decoration-one,
+    .reveal-decoration-two,
+    .reveal-decoration-three,
+    .reveal-decoration-four {
+        display: none;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+
+    .reveal-page {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .reveal-intro h1 {
+        font-size: 33px;
+    }
+
+    .reveal-gift {
+        transform: scale(0.9);
+        margin-top: 5px;
+        margin-bottom: -10px;
+    }
+
+    .revealed-header h1 {
+        font-size: 34px;
+    }
+
+    .revealed-message {
+        padding: 25px 16px;
+    }
+}

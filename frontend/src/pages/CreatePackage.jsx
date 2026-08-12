@@ -44,7 +44,116 @@ function CreatePackage() {
         navigate("/create/content");
     };
     return (
-        <main className="create-package">
+        <main className={`create-package theme-${packageData.theme}`}>
+
+            <div className="theme-decorations" aria-hidden="true">
+                <div className="blush-decorations">
+                    <span className="blush-flower flower-one">🌸</span>
+                    <span className="blush-flower flower-two">🌷</span>
+                    <span className="blush-flower flower-three">🌸</span>
+                    
+
+                    <span className="blush-heart heart-one">♡</span>
+                    <span className="blush-heart heart-two">♥</span>
+                    <span className="blush-heart heart-three">♥</span>
+                    
+
+
+                    <span className="blush-sparkle sparkle-one">✦</span>
+                    <span className="blush-sparkle sparkle-two">✧</span>
+
+                    <span className="blush-petal petal-one">❀</span>
+                    <span className="blush-petal petal-two">❀</span>
+                </div>
+
+                <div className="midnight-decorations">
+
+                    <span className="midnight-moon">🌙</span>
+
+                    <span className="night-star night-star-1">✦</span>
+                    <span className="night-star night-star-2">✧</span>
+                    <span className="night-star night-star-3">✦</span>
+                    <span className="night-star night-star-4">✧</span>
+                    <span className="night-star night-star-5">·</span>
+                    <span className="night-star night-star-6">✦</span>
+                    <span className="night-star night-star-7">✧</span>
+
+                    <span className="shooting-star">☄</span>
+
+                    <span className="night-cloud night-cloud-1">☁</span>
+                    <span className="night-cloud night-cloud-2">☁</span>
+
+                </div>
+
+                <div className="garden-decorations">
+
+                    {/* Left vines */}
+                    <span className="garden-vine vine-left-top">🌿</span>
+                    <span className="garden-vine vine-left-middle">🌱</span>
+                    <span className="garden-vine vine-left-bottom">🍃</span>
+
+                    {/* Right vines */}
+                    <span className="garden-vine vine-right-top">🌿</span>
+                    <span className="garden-vine vine-right-middle">🍀</span>
+                    <span className="garden-vine vine-right-bottom">🍃</span>
+
+                    {/* Different leaves */}
+                    <span className="garden-leaf leaf-large">🍃</span>
+                    <span className="garden-leaf leaf-small">🌱</span>
+                    <span className="garden-leaf leaf-round">🍀</span>
+                    <span className="garden-leaf leaf-sprout">🌿</span>
+                    <span className="garden-leaf leaf-four">☘️</span>
+                    <span className="garden-leaf leaf-five">🌱</span>
+
+                    {/* Flowers */}
+                    <span className="garden-flower flower-daisy">🌼</span>
+                    <span className="garden-flower flower-tulip">🌷</span>
+                    <span className="garden-flower flower-blossom">🌺</span>
+
+                    {/* Tiny garden details */}
+                    <span className="garden-detail detail-one">✿</span>
+                    <span className="garden-detail detail-two">❀</span>
+                    <span className="garden-detail detail-three">✽</span>
+
+                    {/* Butterfly */}
+                    <span className="garden-butterfly">🦋</span>
+
+
+
+                </div>
+
+                <div className="cloud-decorations">
+
+                    {/* Sun */}
+                    <span className="sky-sun">☀️</span>
+
+                    {/* Clouds */}
+                    <span className="sky-cloud cloud-large cloud-one">☁️</span>
+                    <span className="sky-cloud cloud-medium cloud-two">☁️</span>
+                    <span className="sky-cloud cloud-small cloud-three">☁️</span>
+                    <span className="sky-cloud cloud-large cloud-four">☁️</span>
+                    <span className="sky-cloud cloud-small cloud-five">☁️</span>
+
+                    {/* Rainbow */}
+                    <span className="sky-rainbow">🌈</span>
+
+                    {/* Birds */}
+                    <span className="sky-bird bird-one">⌁</span>
+                    <span className="sky-bird bird-two">⌁</span>
+
+                    {/* Sparkles */}
+                    <span className="sky-sparkle sparkle-cloud-one">✦</span>
+                    <span className="sky-sparkle sparkle-cloud-two">✧</span>
+
+                    {/* Floating bubbles */}
+                    <span className="sky-bubble bubble-cloud-one">○</span>
+                    <span className="sky-bubble bubble-cloud-two">○</span>
+                    <span className="sky-bubble bubble-cloud-three">○</span>
+
+                </div>
+
+
+            </div>
             <div className="create-container">
 
                 <div className="create-heading">
@@ -65,6 +174,80 @@ function CreatePackage() {
                     <p className="form-description">
                         Tell us a little about this box.
                     </p>
+
+
+                                        <div className="form-group">
+
+                        <label>
+                            Choose a Theme
+                        </label>
+
+                        <div className="theme-options">
+
+                            <button
+                                type="button"
+                                className={`theme-option ${packageData.theme === "blush" ? "selected" : ""
+                                    }`}
+                                onClick={() =>
+                                    setPackageData((previousData) => ({
+                                        ...previousData,
+                                        theme: "blush"
+                                    }))
+                                }
+                            >
+                                🌸
+                                <span>Blush</span>
+                            </button>
+
+                            <button
+                                type="button"
+                                className={`theme-option ${packageData.theme === "midnight" ? "selected" : ""
+                                    }`}
+                                onClick={() =>
+                                    setPackageData((previousData) => ({
+                                        ...previousData,
+                                        theme: "midnight"
+                                    }))
+                                }
+                            >
+                                🌙
+                                <span>Midnight</span>
+                            </button>
+
+                            <button
+                                type="button"
+                                className={`theme-option ${packageData.theme === "garden" ? "selected" : ""
+                                    }`}
+                                onClick={() =>
+                                    setPackageData((previousData) => ({
+                                        ...previousData,
+                                        theme: "garden"
+                                    }))
+                                }
+                            >
+                                🌿
+                                <span>Garden</span>
+                            </button>
+
+                            <button
+                                type="button"
+                                className={`theme-option ${packageData.theme === "cloud" ? "selected" : ""
+                                    }`}
+                                onClick={() =>
+                                    setPackageData((previousData) => ({
+                                        ...previousData,
+                                        theme: "cloud"
+                                    }))
+                                }
+                            >
+                                ☁️
+                                <span>Cloud</span>
+                            </button>
+
+                        </div>
+
+
+                    </div>
 
                     <div className="form-section">
 
@@ -144,78 +327,7 @@ function CreatePackage() {
 
                     </div>
 
-                    <div className="form-group">
 
-                        <label>
-                            Choose a Theme
-                        </label>
-
-                        <div className="theme-options">
-
-                            <button
-                                type="button"
-                                className={`theme-option ${packageData.theme === "blush" ? "selected" : ""
-                                    }`}
-                                onClick={() =>
-                                    setPackageData((previousData) => ({
-                                        ...previousData,
-                                        theme: "blush"
-                                    }))
-                                }
-                            >
-                                🌸
-                                <span>Blush</span>
-                            </button>
-
-                            <button
-                                type="button"
-                                className={`theme-option ${packageData.theme === "midnight" ? "selected" : ""
-                                    }`}
-                                onClick={() =>
-                                    setPackageData((previousData) => ({
-                                        ...previousData,
-                                        theme: "midnight"
-                                    }))
-                                }
-                            >
-                                🌙
-                                <span>Midnight</span>
-                            </button>
-
-                            <button
-                                type="button"
-                                className={`theme-option ${packageData.theme === "garden" ? "selected" : ""
-                                    }`}
-                                onClick={() =>
-                                    setPackageData((previousData) => ({
-                                        ...previousData,
-                                        theme: "garden"
-                                    }))
-                                }
-                            >
-                                🌿
-                                <span>Garden</span>
-                            </button>
-
-                            <button
-                                type="button"
-                                className={`theme-option ${packageData.theme === "cloud" ? "selected" : ""
-                                    }`}
-                                onClick={() =>
-                                    setPackageData((previousData) => ({
-                                        ...previousData,
-                                        theme: "cloud"
-                                    }))
-                                }
-                            >
-                                ☁️
-                                <span>Cloud</span>
-                            </button>
-
-                        </div>
-
-
-                    </div>
 
                     <div className="form-actions">
 
@@ -229,9 +341,9 @@ function CreatePackage() {
 
                     </div>
 
-                    <pre>
+                    {/* <pre>
                         {JSON.stringify(packageData, null, 2)}
-                    </pre>
+                    </pre> */}
 
                 </div>
 

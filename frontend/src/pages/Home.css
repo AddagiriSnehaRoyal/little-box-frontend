@@ -1,391 +1,2965 @@
+/* =========================================================
+   HOME PAGE
+========================================================= */
+
 .home {
-  overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255, 220, 231, 0.55),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(255, 239, 220, 0.55),
+            transparent 25%
+        ),
+        #fffaf8;
+
+    color: #5a3040;
 }
 
-/* =========================
+
+/* =========================================================
+   FLOATING DECORATIONS
+========================================================= */
+
+.floating-decoration {
+    position: absolute;
+    z-index: 0;
+
+    pointer-events: none;
+    user-select: none;
+
+    opacity: 0.45;
+
+    animation: floatDecoration 5s ease-in-out infinite;
+}
+
+.decoration-heart {
+    top: 180px;
+    left: 5%;
+
+    color: #e8a2b6;
+    font-size: 45px;
+}
+
+.decoration-flower {
+    top: 550px;
+    right: 5%;
+
+    color: #d6a1b0;
+    font-size: 42px;
+
+    animation-delay: 1s;
+}
+
+.decoration-sparkle {
+    top: 850px;
+    left: 7%;
+
+    color: #e8c27d;
+    font-size: 35px;
+
+    animation-delay: 2s;
+}
+
+.decoration-butterfly {
+    top: 1150px;
+    right: 7%;
+
+    font-size: 35px;
+    opacity: 0.3;
+
+    animation-delay: 1.5s;
+}
+
+@keyframes floatDecoration {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+}
+
+
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
-  min-height: calc(100vh - 75px);
-  padding: 80px 8%;
+    position: relative;
+    z-index: 1;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    width: min(1200px, 92%);
+    min-height: 760px;
 
-  gap: 60px;
+    margin: 0 auto;
+    padding: 70px 0 80px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(520px, 1fr);
+
+    align-items: center;
+
+    gap: 30px;
 }
 
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
 .hero-content {
-  max-width: 600px;
+    position: relative;
+    z-index: 20;
+
+    max-width: 650px;
+}
+
+.hero-small-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 8px 14px;
+    margin-bottom: 22px;
+
+    border: 1px solid #efd7de;
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    color: #9b6a78;
+
+    font-size: 12px;
+    letter-spacing: 0.3px;
+
+    box-shadow:
+        0 5px 20px rgba(90, 48, 64, 0.05);
 }
 
 .hero-tagline {
-  color: var(--primary);
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 15px;
+    margin: 0 0 12px;
+
+    color: #b5798c;
+
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
 }
 
 .hero h1 {
-  font-family: "Pacifico", cursive;
-  font-size: clamp(48px, 7vw, 78px);
-  line-height: 1.15;
-  color: var(--text);
-  margin-bottom: 25px;
+    margin: 0;
+
+    color: #542c3b;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(52px, 7vw, 82px);
+
+    font-weight: 500;
+
+    line-height: 0.98;
+
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #d4859c;
+
+    font-style: italic;
 }
 
 .hero-description {
-  max-width: 520px;
-  font-size: 17px;
-  line-height: 1.8;
-  color: #6d5c5c;
-  margin-bottom: 35px;
+    max-width: 570px;
+
+    margin: 30px 0 0;
+
+    color: #765b64;
+
+    font-size: 17px;
+
+    line-height: 1.8;
 }
+
+.secondary-description {
+    margin-top: 15px;
+
+    color: #957780;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
 
 .hero-buttons {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
+    display: flex;
+    flex-wrap: wrap;
 
-/* =========================
-   BUTTONS
-========================= */
+    gap: 13px;
+
+    margin-top: 32px;
+}
 
 .primary-button,
 .secondary-button {
-  border: none;
-  padding: 14px 26px;
-  border-radius: 999px;
+    min-height: 48px;
 
-  font-size: 15px;
-  font-weight: 600;
+    padding: 12px 23px;
 
-  cursor: pointer;
+    border-radius: 14px;
 
-  transition: 0.25s ease;
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
 }
 
 .primary-button {
-  background: var(--primary);
-  color: white;
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9a4b8,
+            #d889a2
+        );
+
+    color: white;
+
+    box-shadow:
+        0 10px 25px rgba(190, 105, 130, 0.22);
 }
 
 .primary-button:hover {
-  transform: translateY(-3px);
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(190, 105, 130, 0.3);
 }
 
 .secondary-button {
-  background: var(--secondary);
-  color: var(--text);
+    border: 1px solid #e5cbd3;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    color: #714653;
 }
 
 .secondary-button:hover {
-  transform: translateY(-3px);
+    transform: translateY(-3px);
+
+    background: white;
+
+    box-shadow:
+        0 10px 25px rgba(90, 48, 64, 0.08);
 }
 
-/* =========================
-   GIFT BOX
-========================= */
+.hero-note {
+    display: flex;
+    align-items: center;
 
-.hero-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    gap: 8px;
 
-  min-width: 320px;
+    margin-top: 25px;
+
+    color: #a27b85;
+
+    font-size: 12px;
 }
 
-.gift-box {
-  width: 230px;
-  height: 190px;
+.hero-note span {
+    color: #db8fa5;
 
-  background: var(--primary);
-
-  border-radius: 20px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  position: relative;
-
-  box-shadow: 0 25px 50px rgba(100, 60, 60, 0.15);
-
-  transform: rotate(3deg);
+    font-size: 18px;
 }
 
-.gift-box::before {
-  content: "";
 
-  position: absolute;
 
-  width: 45px;
-  height: 100%;
 
-  background: var(--accent);
+/* =========================================================
+   HERO SPARKLES
+========================================================= */
 
-  left: 50%;
-  transform: translateX(-50%);
+.hero-sparkle {
+    position: absolute;
+
+    color: #dda0b1;
+
+    font-size: 25px;
+
+    opacity: 0.7;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    animation:
+        sparkleFloat 3.5s ease-in-out infinite;
 }
 
-.gift-box::after {
-  content: "";
-
-  position: absolute;
-
-  width: 250px;
-  height: 35px;
-
-  background: var(--accent);
-
-  top: -15px;
-
-  border-radius: 12px;
+.sparkle-one {
+    top: 145px;
+    left: 10%;
 }
 
-.gift-box span {
-  position: relative;
-  z-index: 2;
+.sparkle-two {
+    top: 175px;
+    right: 8%;
 
-  font-size: 55px;
-  color: white;
+    animation-delay: 1s;
 }
 
-/* =========================
-   SECTION COMMON
-========================= */
+.sparkle-three {
+    top: 340px;
+    left: 15%;
 
-.how-section,
-.content-section {
-  padding: 100px 8%;
+    animation-delay: 2s;
 }
+
+@keyframes sparkleFloat {
+    0%,
+    100% {
+        opacity: 0.35;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+        opacity: 0.9;
+
+        transform:
+            translateY(-9px)
+            scale(1.15);
+    }
+}
+
+
+
+
+/* =========================================================
+   GENTLE BOX FLOAT
+
+   Only moves vertically.
+   Does NOT change the centering transform.
+========================================================= */
+
+@keyframes giftFloat {
+    0%,
+    100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -10px;
+    }
+}
+
+
+
+/* =========================================================
+   BODY TOP OPENING
+========================================================= */
+
+.gift-body::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 34px;
+
+    border-radius: 8px 8px 5px 5px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff5f7,
+            #f4b9ca
+        );
+
+    box-shadow:
+        inset 0 -5px 10px rgba(145, 71, 92, 0.08);
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   BOX INNER GLOW
+========================================================= */
+
+.gift-body::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: -20px;
+
+    width: 250px;
+    height: 90px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255, 255, 255, 0.95),
+            rgba(255, 224, 235, 0.65),
+            transparent 72%
+        );
+
+    filter: blur(10px);
+
+    z-index: 2;
+}
+
+
+
+
+
+/* =========================================================
+   MEMORY ANIMATION
+
+   ALL MEMORIES BEGIN AT bottom: 0
+   = THE BOX OPENING.
+
+   Then they rise upward.
+========================================================= */
+
+@keyframes memoryFloat {
+    0% {
+        opacity: 0;
+
+        transform:
+            translate3d(0, 25px, 0)
+            scale(0.45)
+            rotate(-8deg);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    38% {
+        opacity: 1;
+
+        transform:
+            translate3d(
+                var(--drift-x, 8px),
+                -55px,
+                0
+            )
+            scale(1)
+            rotate(4deg);
+    }
+
+    65% {
+        opacity: 0.85;
+
+        transform:
+            translate3d(
+                var(--drift-x, -5px),
+                -125px,
+                0
+            )
+            scale(0.96)
+            rotate(-4deg);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate3d(
+                var(--drift-x, 5px),
+                -220px,
+                0
+            )
+            scale(0.72)
+            rotate(8deg);
+    }
+}
+
+
+/* =========================================================
+   DIFFERENT FLOAT DIRECTIONS
+========================================================= */
+
+.memory-note {
+    --drift-x: -28px;
+}
+
+.memory-music {
+    --drift-x: 20px;
+}
+
+.memory-star {
+    --drift-x: -38px;
+}
+
+.memory-star-two {
+    --drift-x: 32px;
+}
+
+.memory-camera {
+    --drift-x: -22px;
+}
+
+.memory-heart {
+    --drift-x: 28px;
+}
+
+.memory-flower {
+    --drift-x: -10px;
+}
+
+.memory-letter {
+    --drift-x: 38px;
+}
+
+.memory-sparkle {
+    --drift-x: -25px;
+}
+
+.memory-butterfly {
+    --drift-x: 30px;
+}
+
+
+/* =========================================================
+   CAPTION
+========================================================= */
+
+.hero-box-caption {
+    position: absolute;
+
+    left: 50%;
+    top: 650px;
+
+    transform: translateX(-50%);
+
+    z-index: 30;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    color: #b9798b;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 19px;
+
+    font-style: italic;
+
+    letter-spacing: 0.3px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CAPTION TEXT
+========================================================= */
+
+.caption-text {
+    position: relative;
+
+    top: 1px;
+}
+
+
+/* =========================================================
+   CAPTION HEART
+========================================================= */
+
+.caption-heart {
+    color: #d989a0;
+
+    font-size: 22px;
+
+    font-style: normal;
+
+    animation:
+        captionHeart 2.5s ease-in-out infinite;
+}
+
+@keyframes captionHeart {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================================================
+   CAPTION LINES
+========================================================= */
+
+.caption-line {
+    position: relative;
+
+    width: 38px;
+    height: 1px;
+
+    background: #e2a9b8;
+
+    opacity: 0.7;
+}
+
+.caption-line::after {
+    content: "◆";
+
+    position: absolute;
+
+    top: 50%;
+
+    color: #e1a0b2;
+
+    font-size: 5px;
+
+    transform: translateY(-50%);
+}
+
+.caption-line:first-child::after {
+    right: -5px;
+}
+
+.caption-line:last-child::after {
+    left: -5px;
+}
+
+
+/* =========================================================
+   INTRO SECTION
+========================================================= */
+
+.intro-section {
+    position: relative;
+
+    width: min(760px, 90%);
+
+    margin: 20px auto 100px;
+
+    padding: 70px 30px;
+
+    text-align: center;
+
+    border-top: 1px solid #efdde2;
+
+    border-bottom: 1px solid #efdde2;
+}
+
+.intro-flower {
+    margin-bottom: 15px;
+
+    font-size: 30px;
+}
+
+.section-eyebrow {
+    margin: 0 0 10px;
+
+    color: #b77b8d;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+.intro-section h2 {
+    margin: 0;
+
+    color: #5a3040;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(28px, 4vw, 42px);
+
+    font-weight: 500;
+
+    line-height: 1.25;
+}
+
+.intro-section h2 span {
+    display: block;
+
+    color: #d78ba0;
+
+    font-style: italic;
+}
+
+.intro-section > p:last-child {
+    max-width: 560px;
+
+    margin: 22px auto 0;
+
+    color: #806872;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
 
 .section-heading {
-  text-align: center;
-  margin-bottom: 55px;
+    margin-bottom: 45px;
+
+    text-align: center;
 }
 
 .section-heading p {
-  color: var(--primary);
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 8px;
+    margin: 0 0 8px;
+
+    color: #bd7c8f;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.7px;
 }
 
 .section-heading h2 {
-  font-size: 36px;
-  color: var(--text);
+    margin: 0;
+
+    color: #5a3040;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(30px, 4vw, 44px);
+
+    font-weight: 500;
 }
 
-/* =========================
+.section-heading span {
+    display: block;
+
+    max-width: 500px;
+
+    margin: 12px auto 0;
+
+    color: #92757e;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
    HOW IT WORKS
-========================= */
+========================================================= */
+
+.how-section {
+    width: min(1100px, 90%);
+
+    margin: 0 auto 120px;
+}
 
 .steps {
-  display: grid;
+    display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
-  gap: 30px;
-
-  max-width: 1000px;
-
-  margin: auto;
+    gap: 24px;
 }
 
 .step-card {
-  text-align: center;
+    position: relative;
 
-  padding: 35px 25px;
+    padding: 35px 28px;
 
-  background: white;
+    overflow: hidden;
 
-  border-radius: 20px;
+    text-align: center;
 
-  box-shadow: 0 10px 30px rgba(80, 50, 50, 0.06);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.95),
+            rgba(255, 246, 248, 0.9)
+        );
+
+    border: 1px solid #efdae0;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 12px 35px rgba(90, 48, 64, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.step-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    right: -40px;
+    bottom: -40px;
+
+    border-radius: 50%;
+
+    background: rgba(245, 193, 207, 0.18);
+}
+
+.step-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 40px rgba(90, 48, 64, 0.1);
 }
 
 .step-number {
-  width: 50px;
-  height: 50px;
+    color: #d99aae;
 
-  margin: 0 auto 20px;
+    font-family: Georgia, serif;
 
-  border-radius: 50%;
+    font-size: 13px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    font-weight: bold;
+}
 
-  background: var(--secondary);
+.step-icon {
+    margin: 20px 0 12px;
 
-  color: var(--primary);
-
-  font-weight: 700;
+    font-size: 38px;
 }
 
 .step-card h3 {
-  margin-bottom: 10px;
+    margin: 0 0 10px;
+
+    color: #5a3040;
+
+    font-family: Georgia, serif;
+
+    font-size: 22px;
 }
 
 .step-card p {
-  color: #756565;
-  line-height: 1.6;
+    margin: 0;
+
+    color: #806872;
+
+    font-size: 14px;
+
+    line-height: 1.7;
 }
 
-/* =========================
-   CONTENT TYPES
-========================= */
+
+/* =========================================================
+   CONTENT SECTION
+========================================================= */
 
 .content-section {
-  background: var(--secondary);
+    width: min(1100px, 90%);
+
+    margin: 0 auto 120px;
 }
 
 .content-grid {
-  display: grid;
+    display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
-  gap: 20px;
-
-  max-width: 1100px;
-
-  margin: auto;
+    gap: 18px;
 }
 
 .content-card {
-  background: white;
+    position: relative;
 
-  padding: 30px 20px;
+    min-height: 205px;
 
-  border-radius: 18px;
+    padding: 28px 20px;
 
-  text-align: center;
+    display: flex;
 
-  transition: 0.25s ease;
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.82);
+
+    border: 1px solid #efdae0;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 25px rgba(90, 48, 64, 0.045);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
 }
 
 .content-card:hover {
-  transform: translateY(-5px);
+    transform:
+        translateY(-7px)
+        rotate(-1deg);
+
+    background: white;
+
+    box-shadow:
+        0 15px 35px rgba(90, 48, 64, 0.1);
 }
 
-.content-card span {
-  font-size: 35px;
+.content-icon {
+    display: flex;
 
-  display: block;
+    align-items: center;
+    justify-content: center;
 
-  margin-bottom: 15px;
+    width: 62px;
+    height: 62px;
+
+    margin-bottom: 15px;
+
+    border-radius: 20px;
+
+    background: #fff1f5;
+
+    font-size: 28px;
 }
 
 .content-card h3 {
-  margin-bottom: 8px;
+    margin: 0 0 7px;
+
+    color: #5a3040;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
 }
 
 .content-card p {
-  font-size: 14px;
-  color: #756565;
-  line-height: 1.5;
+    margin: 0;
+
+    color: #806872;
+
+    font-size: 13px;
+
+    line-height: 1.5;
 }
 
-/* =========================
-   CTA
-========================= */
+.content-card small {
+    margin-top: 10px;
+
+    color: #c18a99;
+
+    font-size: 11px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.quote-section {
+    width: min(850px, 90%);
+
+    margin: 0 auto 120px;
+
+    padding: 65px 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff1f5,
+            #fff9f1
+        );
+
+    border: 1px solid #f0dce2;
+
+    border-radius: 35px;
+}
+
+.quote-decoration {
+    margin-bottom: 15px;
+
+    color: #dfa0b1;
+
+    font-family: Georgia, serif;
+
+    font-size: 45px;
+
+    line-height: 1;
+}
+
+.quote-section p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #613747;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(22px, 3vw, 32px);
+
+    font-style: italic;
+
+    line-height: 1.5;
+}
+
+.quote-section > span {
+    display: block;
+
+    margin-top: 18px;
+
+    color: #a77b86;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
 
 .cta-section {
-  padding: 110px 20px;
+    position: relative;
 
-  text-align: center;
+    width: min(1100px, 92%);
+
+    margin: 0 auto;
+
+    padding: 90px 25px 55px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 255, 255, 0.55),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #f7dce4,
+            #fcebdc
+        );
+
+    border-radius: 40px 40px 0 0;
 }
 
 .cta-section h2 {
-  font-size: 38px;
+    max-width: 650px;
 
-  max-width: 700px;
+    margin: 0 auto;
 
-  margin: auto auto 15px;
+    color: #5a3040;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(30px, 5vw, 48px);
+
+    font-weight: 500;
+
+    line-height: 1.2;
 }
 
-.cta-section p {
-  color: #756565;
+.cta-section h2 span {
+    display: block;
 
-  margin-bottom: 30px;
+    color: #c8738d;
+
+    font-style: italic;
 }
 
-/* =========================
+.cta-section > p:not(.section-eyebrow) {
+    margin: 18px 0 28px;
+
+    color: #80616c;
+
+    font-size: 15px;
+}
+
+.cta-button {
+    padding-left: 30px;
+
+    padding-right: 30px;
+}
+
+.cta-footer {
+    margin-top: 55px;
+
+    color: #a87c87;
+
+    font-family: Georgia, serif;
+
+    font-size: 12px;
+
+    font-style: italic;
+}
+
+.cta-decoration {
+    position: absolute;
+
+    opacity: 0.55;
+
+    font-size: 40px;
+
+    animation:
+        floatDecoration 4s ease-in-out infinite;
+}
+
+.cta-left {
+    left: 8%;
+
+    bottom: 70px;
+}
+
+.cta-right {
+    right: 8%;
+
+    top: 65px;
+
+    animation-delay: 1s;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        padding-top: 65px;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 700px;
+
+        margin: 0 auto;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-note {
+        justify-content: center;
+    }
+
+
+    /* =====================================================
+       TABLET BOX
+    ===================================================== */
+
+    .hero-box {
+        width: 100%;
+
+        height: 680px;
+
+        margin-top: 0;
+    }
+
+    .box-glow {
+        width: 540px;
+        height: 400px;
+
+        top: 50%;
+    }
+
+    .gift-box-wrapper {
+        left: 50%;
+        top: 290px;
+
+        width: 440px;
+        height: 370px;
+    }
+
+    .gift-box {
+        width: 390px;
+        height: 325px;
+    }
+
+    .gift-body {
+        height: 250px;
+    }
+
+    .gift-lid {
+        height: 84px;
+    }
+
+    .box-memories {
+        bottom: 340px;
+
+        width: 420px;
+    }
+
+    .hero-box-caption {
+        top: 660px;
+    }
+
+
+    /* =====================================================
+       OTHER SECTIONS
+    ===================================================== */
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .step-card {
+        max-width: 500px;
+
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+    .content-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
    MOBILE
-========================= */
-
-@media (max-width: 900px) {
-
-  .hero {
-    flex-direction: column;
-    text-align: center;
-
-    padding-top: 70px;
-  }
-
-  .hero-description {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .steps {
-    grid-template-columns: 1fr;
-  }
-
-  .content-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+========================================================= */
 
 @media (max-width: 600px) {
 
-  .hero {
-    padding: 60px 20px;
-  }
+    .home {
+        overflow-x: hidden;
+    }
 
-  .hero h1 {
-    font-size: 48px;
-  }
+    .floating-decoration {
+        display: none;
+    }
 
-  .hero-description {
-    font-size: 15px;
-  }
+    .hero {
+        width: 92%;
 
-  .hero-box {
-    min-width: auto;
-  }
+        padding: 50px 0 30px;
 
-  .gift-box {
-    width: 190px;
+        gap: 0;
+    }
+
+    .hero-small-badge {
+        font-size: 11px;
+    }
+
+    .hero-tagline {
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        margin-top: 24px;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    .secondary-description {
+        font-size: 13px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+
+        margin-top: 27px;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+    }
+
+    .hero-note {
+        text-align: center;
+
+        font-size: 11px;
+
+        line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       MOBILE BOX
+    ===================================================== */
+
+    .hero-box {
+        width: 100%;
+
+        height: 560px;
+
+        margin-top: 0;
+    }
+
+    .box-glow {
+        width: 360px;
+        height: 280px;
+
+        top: 52%;
+    }
+
+    .gift-box-wrapper {
+        left: 50%;
+        top: 225px;
+
+        width: 350px;
+        height: 310px;
+    }
+
+    .gift-box {
+        width: 330px;
+        height: 275px;
+    }
+
+    .gift-body {
+        height: 215px;
+
+        border-radius:
+            7px
+            7px
+            23px
+            23px;
+    }
+
+    .gift-lid {
+        left: -10px;
+        right: -10px;
+
+        top: -22px;
+
+        height: 70px;
+
+        border-radius: 14px;
+    }
+
+    .gift-ribbon {
+        width: 44px;
+    }
+
+    .gift-heart {
+        width: 88px;
+        height: 88px;
+
+        font-size: 74px;
+    }
+
+
+    /* =====================================================
+       MOBILE MEMORIES
+    ===================================================== */
+
+    .box-memories {
+        left: 50%;
+
+        bottom: 280px;
+
+        width: 330px;
+        height: 230px;
+    }
+
+    .memory {
+        font-size: 20px;
+    }
+
+    .memory-note {
+        left: 95px;
+
+        font-size: 25px;
+    }
+
+    .memory-music {
+        left: 150px;
+
+        font-size: 28px;
+    }
+
+    .memory-star {
+        left: 30px;
+
+        font-size: 25px;
+    }
+
+    .memory-star-two {
+        right: 30px;
+
+        font-size: 22px;
+    }
+
+    .memory-camera {
+        left: 55px;
+
+        font-size: 20px;
+    }
+
+    .memory-heart {
+        right: 65px;
+
+        font-size: 28px;
+    }
+
+    .memory-flower {
+        left: 125px;
+
+        font-size: 22px;
+    }
+
+    .memory-letter {
+        right: 20px;
+
+        font-size: 21px;
+    }
+
+    .memory-sparkle {
+        left: 180px;
+
+        font-size: 22px;
+    }
+
+    .memory-butterfly {
+        right: 95px;
+
+        font-size: 20px;
+    }
+
+
+    /* =====================================================
+       MOBILE CAPTION
+    ===================================================== */
+
+    .hero-box-caption {
+        left: 50%;
+
+        top: 535px;
+
+        gap: 8px;
+
+        font-size: 15px;
+    }
+
+    .caption-heart {
+        font-size: 18px;
+    }
+
+    .caption-line {
+        width: 22px;
+    }
+
+    .hero-sparkle {
+        display: none;
+    }
+
+
+    /* =====================================================
+       INTRO
+    ===================================================== */
+
+    .intro-section {
+        margin-bottom: 75px;
+
+        padding: 50px 15px;
+    }
+
+    .intro-section h2 {
+        font-size: 29px;
+    }
+
+    .intro-section > p:last-child {
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       HOW / CONTENT
+    ===================================================== */
+
+    .how-section,
+    .content-section {
+        width: 90%;
+
+        margin-bottom: 80px;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: 31px;
+    }
+
+    .section-heading span {
+        font-size: 13px;
+    }
+
+    .steps {
+        gap: 15px;
+    }
+
+    .step-card {
+        padding: 28px 22px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+    }
+
+    .content-card {
+        min-height: 180px;
+
+        padding: 20px 12px;
+
+        border-radius: 18px;
+    }
+
+    .content-icon {
+        width: 52px;
+
+        height: 52px;
+
+        margin-bottom: 11px;
+
+        border-radius: 16px;
+
+        font-size: 23px;
+    }
+
+    .content-card h3 {
+        font-size: 17px;
+    }
+
+    .content-card p {
+        font-size: 11px;
+    }
+
+    .content-card small {
+        display: none;
+    }
+
+
+    /* =====================================================
+       QUOTE
+    ===================================================== */
+
+    .quote-section {
+        width: 90%;
+
+        margin-bottom: 80px;
+
+        padding: 50px 20px;
+
+        border-radius: 25px;
+    }
+
+    .quote-section p {
+        font-size: 22px;
+    }
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .cta-section {
+        width: 100%;
+
+        padding: 65px 22px 40px;
+
+        border-radius: 30px 30px 0 0;
+    }
+
+    .cta-section h2 {
+        font-size: 31px;
+    }
+
+    .cta-decoration {
+        font-size: 28px;
+    }
+
+    .cta-left {
+        left: 5%;
+
+        bottom: 80px;
+    }
+
+    .cta-right {
+        right: 5%;
+
+        top: 40px;
+    }
+
+    .cta-footer {
+        margin-top: 40px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+
+    /* =====================================================
+       VERY SMALL BOX
+    ===================================================== */
+
+    .hero-box {
+        height: 510px;
+    }
+
+    .gift-box-wrapper {
+        left: 50%;
+        top: 215px;
+
+        width: 320px;
+        height: 290px;
+    }
+
+    .gift-box {
+        width: 300px;
+        height: 255px;
+    }
+
+    .gift-body {
+        height: 200px;
+    }
+
+    .gift-lid {
+        height: 65px;
+
+        top: -20px;
+    }
+
+    .gift-heart {
+        width: 78px;
+        height: 78px;
+
+        font-size: 66px;
+    }
+
+    .box-memories {
+        width: 290px;
+
+        bottom: 260px;
+    }
+
+    .hero-box-caption {
+        top: 490px;
+
+        font-size: 14px;
+
+        gap: 7px;
+    }
+
+    .caption-line {
+        width: 17px;
+    }
+
+
+    /* =====================================================
+       CONTENT
+    ===================================================== */
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-card {
+        min-height: 160px;
+    }
+}
+
+/* =========================================================
+   MEMORY GARDEN
+========================================================= */
+
+.memory-garden {
+    position: relative;
+
+    width: 100%;
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    isolation: isolate;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.memory-glow {
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    left: 50%;
+    top: 48%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 205, 220, 0.55) 0%,
+            rgba(255, 231, 226, 0.32) 35%,
+            rgba(255, 244, 237, 0.15) 58%,
+            transparent 75%
+        );
+
+    filter: blur(10px);
+
+    z-index: -3;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN CENTER AREA
+========================================================= */
+
+.memory-center {
+    position: relative;
+
+    width: 420px;
+    height: 470px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   MAIN MEMORY CARD
+========================================================= */
+
+.memory-card {
+    position: relative;
+
+    width: 330px;
+    height: 390px;
+
+    padding: 25px 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(255, 241, 246, 0.96)
+        );
+
+    border: 1px solid rgba(229, 170, 188, 0.55);
+
+    border-radius: 32px;
+
+    box-shadow:
+        0 30px 70px rgba(156, 82, 105, 0.16),
+        0 10px 30px rgba(220, 145, 165, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+    transform: rotate(-2deg);
+
+    animation:
+        memoryCardFloat 5s ease-in-out infinite;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CARD DECORATIVE GLOW
+========================================================= */
+
+.memory-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -90px;
+    right: -70px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(247, 188, 207, 0.28);
+
+    filter: blur(10px);
+
+    pointer-events: none;
+}
+
+
+.memory-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
     height: 160px;
-  }
 
-  .content-grid {
-    grid-template-columns: 1fr;
-  }
+    bottom: -100px;
+    left: -80px;
 
-  .how-section,
-  .content-section {
-    padding: 70px 20px;
-  }
+    border-radius: 50%;
 
-  .section-heading h2 {
+    background:
+        rgba(250, 217, 189, 0.25);
+
+    filter: blur(10px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD FLOAT
+========================================================= */
+
+@keyframes memoryCardFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-2deg);
+    }
+
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(-1deg);
+    }
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.memory-card-top {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 18px;
+
+    border-bottom:
+        1px solid rgba(224, 177, 190, 0.35);
+}
+
+
+.memory-card-label {
+    color: #b57b8c;
+
+    font-size: 11px;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+
+.memory-card-heart {
+    color: #df8ea5;
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    animation:
+        littleHeart 2.5s ease-in-out infinite;
+}
+
+
+@keyframes littleHeart {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.memory-card-content {
+    position: relative;
+
+    z-index: 2;
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   BIG HEART
+========================================================= */
+
+.memory-big-heart {
+    width: 105px;
+    height: 105px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    color: rgba(255, 255, 255, 0.95);
+
+    font-family: Georgia, serif;
+
+    font-size: 78px;
+
+    line-height: 1;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f2b4c7,
+            #df8da7
+        );
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 15px 30px rgba(208, 116, 143, 0.20),
+        inset 0 1px 0 rgba(255, 255, 255, 0.65);
+
+    text-shadow:
+        0 5px 12px rgba(132, 63, 84, 0.12);
+
+    animation:
+        heartGlow 3s ease-in-out infinite;
+}
+
+
+@keyframes heartGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 15px 30px rgba(208, 116, 143, 0.20),
+            inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    }
+
+    50% {
+        box-shadow:
+            0 18px 38px rgba(208, 116, 143, 0.30),
+            inset 0 1px 0 rgba(255, 255, 255, 0.75);
+    }
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.memory-card-title {
+    margin: 0;
+
+    color: #79505e;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    font-style: italic;
+}
+
+
+.memory-card-title span {
+    display: block;
+
+    color: #d27f98;
+
+    font-size: 27px;
+
+    margin-top: 2px;
+}
+
+
+/* =========================================================
+   CARD LINE
+========================================================= */
+
+.memory-card-line {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 14px 0;
+}
+
+
+.memory-card-line span {
+    width: 35px;
+    height: 1px;
+
+    background: #dfb0bd;
+
+    opacity: 0.7;
+}
+
+
+.memory-card-line b {
+    color: #df9aae;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   CARD MESSAGE
+========================================================= */
+
+.memory-card-message {
+    margin: 0;
+
+    color: #a27c86;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
+
+.memory-card-footer {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-top: 17px;
+
+    border-top:
+        1px solid rgba(224, 177, 190, 0.35);
+
+    color: #bd8b99;
+
+    font-family: Georgia, serif;
+
+    font-size: 11px;
+
+    font-style: italic;
+}
+
+
+.memory-card-footer span:last-child {
+    color: #dc91a6;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   PEDESTAL / SHADOW
+========================================================= */
+
+.memory-pedestal {
+    position: absolute;
+
+    bottom: 28px;
+
+    left: 50%;
+
+    width: 300px;
+    height: 42px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(134, 72, 91, 0.13);
+
+    filter: blur(18px);
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   FLOATING MEMORY ELEMENTS
+========================================================= */
+
+.floating-memory {
+    position: absolute;
+
+    z-index: 7;
+
+    user-select: none;
+
+    pointer-events: none;
+
+    animation:
+        floatingMemory 5s ease-in-out infinite;
+}
+
+
+@keyframes floatingMemory {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-14px)
+            rotate(3deg);
+    }
+}
+
+
+/* =========================================================
+   CAMERA
+========================================================= */
+
+.memory-camera {
+    left: 5%;
+    top: 24%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 4px;
+
+    padding: 12px 14px;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    border: 1px solid rgba(230, 191, 202, 0.65);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 25px rgba(100, 60, 75, 0.08);
+
+    animation-delay: 0.4s;
+}
+
+
+.memory-camera span {
     font-size: 28px;
-  }
+}
 
-  .cta-section {
-    padding: 80px 20px;
-  }
 
-  .cta-section h2 {
+.memory-camera small {
+    color: #a47a85;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.memory-note-card {
+    right: 4%;
+    top: 18%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 3px;
+
+    padding: 12px 15px;
+
+    background: rgba(255, 249, 250, 0.8);
+
+    border: 1px solid #efd5dd;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 10px 25px rgba(100, 60, 75, 0.07);
+
+    animation-delay: 1s;
+}
+
+
+.memory-note-card span {
+    font-size: 27px;
+}
+
+
+.memory-note-card small {
+    color: #b27e8d;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+.memory-music-card {
+    left: 3%;
+    bottom: 25%;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f7d2dd,
+            #f0b9ca
+        );
+
+    box-shadow:
+        0 12px 25px rgba(191, 105, 131, 0.16);
+
+    animation-delay: 1.6s;
+}
+
+
+.memory-music-card span {
     font-size: 28px;
-  }
+}
+
+
+/* =========================================================
+   FLOWER
+========================================================= */
+
+.memory-flower-card {
+    right: 3%;
+    bottom: 27%;
+
+    font-size: 34px;
+
+    animation-delay: 2.1s;
+
+    filter:
+        drop-shadow(
+            0 8px 8px rgba(145, 76, 95, 0.10)
+        );
+}
+
+
+/* =========================================================
+   GIFT
+========================================================= */
+
+.memory-gift-card {
+    left: 15%;
+    bottom: 13%;
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(255, 255, 255, 0.78);
+
+    border: 1px solid #efd9df;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 25px rgba(100, 60, 75, 0.08);
+
+    font-size: 29px;
+
+    animation-delay: 2.5s;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.memory-location-card {
+    right: 14%;
+    bottom: 13%;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(255, 255, 255, 0.8);
+
+    border: 1px solid #efd8df;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 12px 25px rgba(100, 60, 75, 0.08);
+
+    font-size: 27px;
+
+    animation-delay: 0.8s;
+}
+
+
+/* =========================================================
+   HEART
+========================================================= */
+
+.memory-heart-card {
+    right: 9%;
+    top: 39%;
+
+    color: #df8ea5;
+
+    font-family: Georgia, serif;
+
+    font-size: 48px;
+
+    text-shadow:
+        0 8px 18px rgba(206, 120, 144, 0.20);
+
+    animation:
+        heartFloat 4s ease-in-out infinite;
+}
+
+
+@keyframes heartFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(5deg);
+    }
+}
+
+
+/* =========================================================
+   SPARKLES
+========================================================= */
+
+.memory-sparkle-one,
+.memory-sparkle-two,
+.memory-sparkle-three {
+    color: #dfa0b2;
+
+    font-size: 26px;
+
+    opacity: 0.8;
+}
+
+
+.memory-sparkle-one {
+    left: 20%;
+    top: 13%;
+
+    animation-delay: 0.5s;
+}
+
+
+.memory-sparkle-two {
+    right: 20%;
+    top: 10%;
+
+    font-size: 20px;
+
+    animation-delay: 1.8s;
+}
+
+
+.memory-sparkle-three {
+    left: 13%;
+    top: 48%;
+
+    color: #e5b36e;
+
+    font-size: 22px;
+
+    animation-delay: 2.5s;
+}
+
+
+/* =========================================================
+   BOTTOM CAPTION
+========================================================= */
+
+.memory-caption {
+    position: absolute;
+
+    left: 50%;
+    bottom: 15px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    width: max-content;
+
+    color: #b9798b;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+    font-style: italic;
+
+    white-space: nowrap;
+
+    z-index: 10;
+}
+
+
+.memory-caption-heart {
+    color: #db8ca2;
+
+    font-size: 20px;
+
+    animation:
+        littleHeart 2.5s ease-in-out infinite;
+}
+
+
+.memory-caption-line {
+    position: relative;
+
+    width: 28px;
+    height: 1px;
+
+    background: #dda7b7;
+
+    opacity: 0.75;
+}
+
+
+.memory-caption-line::after {
+    content: "◆";
+
+    position: absolute;
+
+    top: 50%;
+
+    color: #dda0b1;
+
+    font-size: 5px;
+
+    transform: translateY(-50%);
+}
+
+
+.memory-caption-line:first-child::after {
+    right: -5px;
+}
+
+
+.memory-caption-line:last-child::after {
+    left: -5px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .memory-garden {
+        min-height: 600px;
+
+        margin-top: 15px;
+    }
+
+    .memory-center {
+        width: 400px;
+        height: 450px;
+    }
+
+    .memory-card {
+        width: 310px;
+        height: 370px;
+    }
+
+    .memory-camera {
+        left: 3%;
+    }
+
+    .memory-note-card {
+        right: 3%;
+    }
+
+    .memory-gift-card {
+        left: 10%;
+    }
+
+    .memory-location-card {
+        right: 9%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .memory-garden {
+        min-height: 520px;
+
+        margin-top: 0;
+
+        overflow: hidden;
+    }
+
+
+    .memory-glow {
+        width: 370px;
+        height: 370px;
+    }
+
+
+    .memory-center {
+        width: 340px;
+        height: 390px;
+    }
+
+
+    .memory-card {
+        width: 270px;
+        height: 335px;
+
+        padding: 20px 22px;
+
+        border-radius: 26px;
+    }
+
+
+    .memory-card-label {
+        font-size: 9px;
+    }
+
+
+    .memory-card-heart {
+        font-size: 21px;
+    }
+
+
+    .memory-big-heart {
+        width: 82px;
+        height: 82px;
+
+        margin-bottom: 14px;
+
+        font-size: 62px;
+
+        border-radius: 23px;
+    }
+
+
+    .memory-card-title {
+        font-size: 14px;
+    }
+
+
+    .memory-card-title span {
+        font-size: 22px;
+    }
+
+
+    .memory-card-message {
+        font-size: 10px;
+    }
+
+
+    .memory-card-footer {
+        font-size: 9px;
+    }
+
+
+    .memory-card-footer span:last-child {
+        font-size: 16px;
+    }
+
+
+    .memory-pedestal {
+        width: 240px;
+
+        bottom: 25px;
+    }
+
+
+    /* Smaller floating elements */
+
+    .memory-camera {
+        left: 1%;
+        top: 21%;
+
+        padding: 8px 10px;
+
+        border-radius: 14px;
+    }
+
+
+    .memory-camera span {
+        font-size: 21px;
+    }
+
+
+    .memory-camera small {
+        font-size: 7px;
+    }
+
+
+    .memory-note-card {
+        right: 1%;
+        top: 17%;
+
+        padding: 8px 10px;
+
+        border-radius: 13px;
+    }
+
+
+    .memory-note-card span {
+        font-size: 21px;
+    }
+
+
+    .memory-note-card small {
+        font-size: 7px;
+    }
+
+
+    .memory-music-card {
+        left: 2%;
+        bottom: 23%;
+
+        width: 48px;
+        height: 48px;
+    }
+
+
+    .memory-music-card span {
+        font-size: 22px;
+    }
+
+
+    .memory-flower-card {
+        right: 2%;
+        bottom: 25%;
+
+        font-size: 27px;
+    }
+
+
+    .memory-gift-card {
+        left: 8%;
+        bottom: 10%;
+
+        width: 48px;
+        height: 48px;
+
+        border-radius: 15px;
+
+        font-size: 23px;
+    }
+
+
+    .memory-location-card {
+        right: 8%;
+        bottom: 10%;
+
+        width: 46px;
+        height: 46px;
+
+        font-size: 21px;
+    }
+
+
+    .memory-heart-card {
+        right: 3%;
+        top: 40%;
+
+        font-size: 36px;
+    }
+
+
+    .memory-sparkle-one {
+        left: 16%;
+        top: 12%;
+
+        font-size: 20px;
+    }
+
+
+    .memory-sparkle-two {
+        right: 16%;
+        top: 9%;
+
+        font-size: 16px;
+    }
+
+
+    .memory-sparkle-three {
+        left: 9%;
+        top: 48%;
+
+        font-size: 17px;
+    }
+
+
+    .memory-caption {
+        bottom: 4px;
+
+        gap: 7px;
+
+        font-size: 12px;
+    }
+
+
+    .memory-caption-heart {
+        font-size: 17px;
+    }
+
+
+    .memory-caption-line {
+        width: 18px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .memory-garden {
+        min-height: 470px;
+    }
+
+
+    .memory-center {
+        width: 300px;
+        height: 360px;
+    }
+
+
+    .memory-card {
+        width: 245px;
+        height: 315px;
+
+        padding: 18px;
+    }
+
+
+    .memory-big-heart {
+        width: 72px;
+        height: 72px;
+
+        font-size: 55px;
+    }
+
+
+    .memory-card-title span {
+        font-size: 20px;
+    }
+
+
+    .memory-card-message {
+        font-size: 9px;
+    }
+
+
+    .memory-camera,
+    .memory-note-card {
+        transform: scale(0.85);
+    }
+
+
+    .memory-gift-card,
+    .memory-location-card {
+        transform: scale(0.85);
+    }
+
+
+    .memory-caption {
+        font-size: 10px;
+    }
+
+
+    .memory-caption-line {
+        width: 14px;
+    }
 }

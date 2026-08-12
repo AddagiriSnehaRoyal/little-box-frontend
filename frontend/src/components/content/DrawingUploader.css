@@ -232,3 +232,62 @@
     }
 
 }
+/* =========================================
+   REMOVE DRAWING BUTTON
+========================================= */
+
+.remove-drawing-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    margin-top: 12px;
+    padding: 9px 16px;
+
+    border: 1px solid #e3b8c4;
+    border-radius: 10px;
+
+    background: #fff5f7;
+    color: #9b4f64;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease;
+}
+
+.remove-drawing-button:hover {
+    background: #ffe5eb;
+
+    color: #8a304b;
+
+    border-color: #d99aaa;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(150, 70, 90, 0.12);
+}
+
+.remove-drawing-button:active {
+    transform: translateY(0);
+}
+
+
+/* 📱 Mobile */
+
+@media (max-width: 600px) {
+
+    .remove-drawing-button {
+        width: 100%;
+    }
+
+}

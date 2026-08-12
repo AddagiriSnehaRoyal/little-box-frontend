@@ -170,3 +170,1724 @@
   }
 }
 
+/* =========================================
+   CREATE PACKAGE THEMES
+========================================= */
+
+.create-package.theme-blush {
+    background: #fff4f7;
+}
+
+.create-package.theme-midnight {
+    background: #0b1020;
+    color: #ffffff;
+}
+
+.create-package.theme-garden {
+    background: #eef7e9;
+}
+
+.create-package.theme-cloud {
+    background: #edf7ff;
+}
+
+.create-package.theme-midnight .create-heading h1,
+.create-package.theme-midnight .create-heading p,
+.create-package.theme-midnight .create-heading span,
+.create-package.theme-midnight .package-form h2,
+.create-package.theme-midnight .form-description,
+.create-package.theme-midnight label,
+.create-package.theme-midnight .form-section h3 {
+    color: #ffffff;
+}
+
+.create-package.theme-midnight .package-form {
+    background: #151d32;
+    border-color: #35476d;
+}
+
+.create-package.theme-midnight input,
+.create-package.theme-midnight textarea {
+    background: #1d2942;
+    color: #ffffff;
+    border-color: #465a82;
+}
+
+.create-package.theme-midnight input::placeholder,
+.create-package.theme-midnight textarea::placeholder {
+    color: #9ba8c4;
+}
+
+.create-package {
+    transition:
+        background 0.8s ease,
+        color 0.8s ease;
+}
+
+.create-container,
+.package-form,
+input,
+textarea,
+.theme-option {
+    transition:
+        background-color 0.7s ease,
+        color 0.7s ease,
+        border-color 0.7s ease,
+        box-shadow 0.7s ease;
+}
+
+.create-package.theme-blush {
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 182, 204, 0.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(255, 210, 225, 0.4),
+            transparent 30%
+        ),
+        #fff4f7;
+}
+
+.create-package.theme-midnight {
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(120, 130, 220, 0.25),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 15% 75%,
+            rgba(80, 100, 180, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #050914,
+            #0c1428,
+            #172542
+        );
+}
+
+.create-package.theme-garden {
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(170, 205, 150, 0.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(200, 225, 180, 0.4),
+            transparent 30%
+        ),
+        #eef7e9;
+}
+
+.create-package.theme-cloud {
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(170, 210, 240, 0.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(210, 230, 250, 0.45),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #edf7ff,
+            #f8fcff
+        );
+}
+
+/* =========================================
+   THEME DECORATIONS
+========================================= */
+
+.create-package {
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-decorations {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.create-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================
+   🌸 BLUSH DECORATIONS
+========================================= */
+
+.decor-blush {
+    position: absolute;
+    inset: 0;
+    transition: opacity 0.6s ease;
+}
+
+.create-package:not(.theme-blush) .decor-blush {
+    opacity: 0;
+}
+
+.flower,
+.heart {
+    position: absolute;
+    opacity: 0.65;
+    filter: drop-shadow(0 5px 10px rgba(180, 90, 120, 0.12));
+}
+
+.flower-1 {
+    top: 8%;
+    left: 6%;
+    font-size: 42px;
+    transform: rotate(-15deg);
+}
+
+.flower-2 {
+    bottom: 12%;
+    right: 7%;
+    font-size: 38px;
+    transform: rotate(15deg);
+}
+
+.heart-1 {
+    top: 25%;
+    right: 8%;
+    font-size: 35px;
+}
+
+.heart-2 {
+    bottom: 30%;
+    left: 5%;
+    font-size: 28px;
+}
+
+/* =========================================
+   🌙 MIDNIGHT DECORATIONS
+========================================= */
+
+.decor-midnight {
+    position: absolute;
+    inset: 0;
+    transition: opacity 0.6s ease;
+}
+
+.create-package:not(.theme-midnight) .decor-midnight {
+    opacity: 0;
+}
+
+.moon {
+    position: absolute;
+    top: 8%;
+    right: 8%;
+    font-size: 65px;
+
+    filter:
+        drop-shadow(0 0 18px rgba(180, 190, 255, 0.45));
+}
+
+.star {
+    position: absolute;
+    color: #ffffff;
+    opacity: 0.75;
+
+    animation: twinkle 2.5s ease-in-out infinite;
+}
+
+.star-1 {
+    top: 18%;
+    left: 10%;
+    font-size: 25px;
+}
+
+.star-2 {
+    top: 32%;
+    right: 17%;
+    font-size: 18px;
+    animation-delay: 0.5s;
+}
+
+.star-3 {
+    bottom: 20%;
+    left: 12%;
+    font-size: 22px;
+    animation-delay: 1s;
+}
+
+.star-4 {
+    bottom: 35%;
+    right: 7%;
+    font-size: 35px;
+    animation-delay: 1.5s;
+}
+
+.star-5 {
+    top: 12%;
+    left: 35%;
+    font-size: 20px;
+    animation-delay: 0.8s;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* =========================================
+   🌿 GARDEN DECORATIONS
+========================================= */
+
+.decor-garden {
+    position: absolute;
+    inset: 0;
+    transition: opacity 0.6s ease;
+}
+
+.create-package:not(.theme-garden) .decor-garden {
+    opacity: 0;
+}
+
+.leaf,
+.garden-flower {
+    position: absolute;
+    opacity: 0.7;
+
+    filter:
+        drop-shadow(0 5px 8px rgba(70, 110, 60, 0.12));
+}
+
+.leaf-1 {
+    top: 8%;
+    left: 5%;
+    font-size: 48px;
+    transform: rotate(-25deg);
+}
+
+.leaf-2 {
+    bottom: 10%;
+    right: 5%;
+    font-size: 55px;
+    transform: rotate(20deg);
+}
+
+.leaf-3 {
+    top: 35%;
+    right: 6%;
+    font-size: 35px;
+    transform: rotate(-15deg);
+}
+
+.garden-flower-1 {
+    top: 20%;
+    right: 15%;
+    font-size: 38px;
+}
+
+.garden-flower-2 {
+    bottom: 25%;
+    left: 7%;
+    font-size: 35px;
+}
+
+/* =========================================
+   ☁️ CLOUD DECORATIONS
+========================================= */
+
+.decor-cloud {
+    position: absolute;
+    inset: 0;
+    transition: opacity 0.6s ease;
+}
+
+.create-package:not(.theme-cloud) .decor-cloud {
+    opacity: 0;
+}
+
+.cloud {
+    position: absolute;
+    opacity: 0.7;
+
+    filter:
+        drop-shadow(0 8px 15px rgba(100, 150, 190, 0.15));
+
+    animation: floatCloud 7s ease-in-out infinite;
+}
+
+.cloud-1 {
+    top: 8%;
+    left: 5%;
+    font-size: 55px;
+}
+
+.cloud-2 {
+    top: 30%;
+    right: 6%;
+    font-size: 42px;
+    animation-delay: 2s;
+}
+
+.cloud-3 {
+    bottom: 10%;
+    left: 8%;
+    font-size: 48px;
+    animation-delay: 4s;
+}
+
+@keyframes floatCloud {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(15px);
+    }
+}
+
+.bubble {
+    position: absolute;
+    color: #ffffff;
+    opacity: 0.55;
+
+    animation: bubbleFloat 5s ease-in-out infinite;
+}
+
+.bubble-1 {
+    top: 20%;
+    left: 25%;
+    font-size: 30px;
+}
+
+.bubble-2 {
+    bottom: 25%;
+    right: 20%;
+    font-size: 20px;
+    animation-delay: 2s;
+}
+
+@keyframes bubbleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.create-package.theme-blush {
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(255, 170, 195, 0.45),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(255, 200, 220, 0.5),
+            transparent 30%
+        ),
+        #fff1f5;
+}
+.create-package.theme-midnight {
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(120, 130, 220, 0.25),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 15% 75%,
+            rgba(80, 100, 180, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #050914,
+            #0c1428,
+            #172542
+        );
+}
+.create-package.theme-garden {
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(140, 190, 120, 0.35),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(190, 220, 150, 0.45),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #edf7e8,
+            #f7fbf2
+        );
+}
+
+.create-package.theme-cloud {
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(140, 200, 240, 0.4),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(190, 220, 250, 0.45),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #e6f4ff,
+            #f8fcff
+        );
+}
+.theme-decorations > div {
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+/* =========================================
+   🌸 BLUSH DECORATIONS
+========================================= */
+
+.create-package {
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-decorations {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.create-container {
+    position: relative;
+    z-index: 2;
+}
+
+.blush-decorations {
+    position: absolute;
+    inset: 0;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.create-package:not(.theme-blush) .blush-decorations {
+    opacity: 0;
+}
+
+/* Flowers */
+
+.blush-flower {
+    position: absolute;
+
+    opacity: 0.7;
+
+    filter:
+        drop-shadow(0 5px 8px rgba(180, 80, 120, 0.15));
+
+    animation: blushFloat 5s ease-in-out infinite;
+}
+
+.flower-one {
+    top: 8%;
+    left: 5%;
+    font-size: 45px;
+    transform: rotate(-15deg);
+}
+
+.flower-two {
+    right: 6%;
+    bottom: 12%;
+    font-size: 42px;
+    animation-delay: 1.5s;
+}
+
+.flower-three {
+    top: 30%;
+    right: 4%;
+    font-size: 30px;
+    animation-delay: 3s;
+}
+
+/* Hearts */
+
+.blush-heart {
+    position: absolute;
+
+    color: #e98ca9;
+
+    opacity: 0.55;
+
+    animation: heartFloat 4s ease-in-out infinite;
+}
+
+.heart-one {
+    top: 22%;
+    right: 13%;
+    font-size: 35px;
+}
+
+.heart-two {
+    bottom: 28%;
+    left: 5%;
+    font-size: 25px;
+
+    animation-delay: 1.5s;
+}
+
+/* Sparkles */
+
+.blush-sparkle {
+    position: absolute;
+
+    color: #e8a0b6;
+
+    opacity: 0.7;
+
+    animation: sparkle 2.5s ease-in-out infinite;
+}
+
+.sparkle-one {
+    top: 15%;
+    left: 20%;
+    font-size: 22px;
+}
+
+.sparkle-two {
+    bottom: 20%;
+    right: 20%;
+    font-size: 18px;
+
+    animation-delay: 1s;
+}
+
+/* Petals */
+
+.blush-petal {
+    position: absolute;
+
+    color: #f0a8bc;
+
+    opacity: 0.45;
+
+    animation: petalFloat 7s ease-in-out infinite;
+}
+
+.petal-one {
+    top: 45%;
+    left: 10%;
+    font-size: 20px;
+}
+
+.petal-two {
+    top: 60%;
+    right: 10%;
+    font-size: 17px;
+
+    animation-delay: 2s;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes blushFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+}
+
+@keyframes heartFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-10px) scale(1.08);
+    }
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.25);
+    }
+}
+
+@keyframes petalFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(20deg);
+    }
+}
+/* =========================================
+   🌙 MIDNIGHT DECORATIONS
+========================================= */
+
+.midnight-decorations {
+    position: absolute;
+    inset: 0;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.create-package:not(.theme-midnight) .midnight-decorations {
+    opacity: 0;
+}
+
+/* =========================================
+   MOON
+========================================= */
+
+.midnight-moon {
+    position: absolute;
+
+    top: 7%;
+    right: 8%;
+
+    font-size: 70px;
+
+    filter:
+        drop-shadow(0 0 15px rgba(190, 200, 255, 0.6));
+
+    animation: moonGlow 4s ease-in-out infinite;
+}
+
+@keyframes moonGlow {
+
+    0%,
+    100% {
+        filter:
+            drop-shadow(0 0 10px rgba(190, 200, 255, 0.4));
+    }
+
+    50% {
+        filter:
+            drop-shadow(0 0 28px rgba(190, 200, 255, 0.8));
+    }
+}
+
+/* =========================================
+   STARS
+========================================= */
+
+.night-star {
+    position: absolute;
+
+    color: #ffffff;
+
+    opacity: 0.7;
+
+    text-shadow:
+        0 0 10px rgba(180, 200, 255, 0.9);
+
+    animation: starTwinkle 2.5s ease-in-out infinite;
+}
+
+.night-star-1 {
+    top: 12%;
+    left: 8%;
+    font-size: 25px;
+}
+
+.night-star-2 {
+    top: 20%;
+    left: 25%;
+    font-size: 17px;
+
+    animation-delay: 0.5s;
+}
+
+.night-star-3 {
+    top: 35%;
+    right: 18%;
+    font-size: 27px;
+
+    animation-delay: 1s;
+}
+
+.night-star-4 {
+    top: 45%;
+    left: 7%;
+    font-size: 15px;
+
+    animation-delay: 1.5s;
+}
+
+.night-star-5 {
+    bottom: 25%;
+    right: 8%;
+    font-size: 35px;
+
+    animation-delay: 0.7s;
+}
+
+.night-star-6 {
+    bottom: 15%;
+    left: 15%;
+    font-size: 22px;
+
+    animation-delay: 1.2s;
+}
+
+.night-star-7 {
+    top: 10%;
+    left: 48%;
+    font-size: 15px;
+
+    animation-delay: 2s;
+}
+
+@keyframes starTwinkle {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+/* =========================================
+   SHOOTING STAR
+========================================= */
+
+.shooting-star {
+    position: absolute;
+
+    top: 25%;
+    left: 65%;
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    opacity: 0;
+
+    animation: shootingStar 6s ease-in-out infinite;
+}
+
+@keyframes shootingStar {
+
+    0% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 0;
+        transform: translate(-120px, 80px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-120px, 80px);
+    }
+}
+
+/* =========================================
+   NIGHT CLOUDS
+========================================= */
+
+.night-cloud {
+    position: absolute;
+
+    color: #273554;
+
+    opacity: 0.35;
+
+    filter:
+        drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+
+    animation: nightCloudFloat 8s ease-in-out infinite;
+}
+
+.night-cloud-1 {
+    top: 18%;
+    left: 3%;
+
+    font-size: 45px;
+}
+
+.night-cloud-2 {
+    bottom: 12%;
+    right: 5%;
+
+    font-size: 55px;
+
+    animation-delay: 3s;
+}
+
+@keyframes nightCloudFloat {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(18px);
+    }
+}
+/* =========================================
+   🌿 GARDEN DECORATIONS
+========================================= */
+
+.garden-decorations {
+    position: absolute;
+    inset: 0;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.create-package:not(.theme-garden) .garden-decorations {
+    opacity: 0;
+}
+
+
+/* =========================================
+   🌿 VINES
+========================================= */
+
+.garden-vine {
+    position: absolute;
+
+    font-size: 55px;
+
+    opacity: 0.65;
+
+    filter:
+        drop-shadow(0 5px 8px rgba(50, 100, 55, 0.15));
+
+    animation: leafSway 5s ease-in-out infinite;
+}
+
+.vine-left-top {
+    top: 5%;
+    left: 2%;
+
+    font-size: 65px;
+
+    transform: rotate(-25deg);
+}
+
+.vine-left-middle {
+    top: 38%;
+    left: 4%;
+
+    font-size: 45px;
+
+    animation-delay: 1s;
+}
+
+.vine-left-bottom {
+    bottom: 5%;
+    left: 2%;
+
+    font-size: 60px;
+
+    transform: rotate(25deg);
+
+    animation-delay: 2s;
+}
+
+.vine-right-top {
+    top: 8%;
+    right: 2%;
+
+    font-size: 60px;
+
+    transform: rotate(20deg);
+
+    animation-delay: 1.5s;
+}
+
+.vine-right-middle {
+    top: 42%;
+    right: 4%;
+
+    font-size: 42px;
+
+    animation-delay: 2.5s;
+}
+
+.vine-right-bottom {
+    bottom: 6%;
+    right: 2%;
+
+    font-size: 65px;
+
+    transform: rotate(-20deg);
+
+    animation-delay: 3s;
+}
+
+
+/* =========================================
+   🍃 DIFFERENT LEAVES
+========================================= */
+
+.garden-leaf {
+    position: absolute;
+
+    opacity: 0.65;
+
+    filter:
+        drop-shadow(0 5px 8px rgba(50, 100, 55, 0.12));
+
+    animation: leafFloat 6s ease-in-out infinite;
+}
+
+.leaf-large {
+    top: 15%;
+    left: 15%;
+
+    font-size: 42px;
+
+    transform: rotate(-35deg);
+}
+
+.leaf-small {
+    top: 28%;
+    right: 12%;
+
+    font-size: 30px;
+
+    animation-delay: 1s;
+}
+
+.leaf-round {
+    bottom: 20%;
+    left: 14%;
+
+    font-size: 34px;
+
+    animation-delay: 2s;
+}
+
+.leaf-sprout {
+    bottom: 30%;
+    right: 15%;
+
+    font-size: 38px;
+
+    transform: rotate(30deg);
+
+    animation-delay: 1.5s;
+}
+
+.leaf-four {
+    top: 55%;
+    left: 8%;
+
+    font-size: 28px;
+
+    animation-delay: 2.5s;
+}
+
+.leaf-five {
+    top: 12%;
+    right: 30%;
+
+    font-size: 25px;
+
+    animation-delay: 3s;
+}
+
+
+/* =========================================
+   🌼 FLOWERS
+========================================= */
+
+.garden-flower {
+    position: absolute;
+
+    opacity: 0.75;
+
+    filter:
+        drop-shadow(0 5px 10px rgba(70, 100, 50, 0.12));
+
+    animation: flowerFloat 5s ease-in-out infinite;
+}
+
+.flower-daisy {
+    top: 18%;
+    right: 18%;
+
+    font-size: 38px;
+}
+
+.flower-tulip {
+    bottom: 18%;
+    right: 12%;
+
+    font-size: 40px;
+
+    animation-delay: 1.5s;
+}
+
+.flower-blossom {
+    bottom: 30%;
+    left: 9%;
+
+    font-size: 35px;
+
+    animation-delay: 2.5s;
+}
+
+
+/* =========================================
+   ✿ SMALL FLOWER DETAILS
+========================================= */
+
+.garden-detail {
+    position: absolute;
+
+    color: #78a86b;
+
+    opacity: 0.6;
+
+    animation: sparkleGarden 3s ease-in-out infinite;
+}
+
+.detail-one {
+    top: 25%;
+    left: 30%;
+
+    font-size: 25px;
+}
+
+.detail-two {
+    bottom: 25%;
+    right: 30%;
+
+    font-size: 22px;
+
+    animation-delay: 1s;
+}
+
+.detail-three {
+    top: 50%;
+    right: 25%;
+
+    font-size: 18px;
+
+    animation-delay: 2s;
+}
+
+
+/* =========================================
+   🦋 BUTTERFLY
+========================================= */
+
+.garden-butterfly {
+    position: absolute;
+
+    top: 32%;
+    left: 12%;
+
+    font-size: 32px;
+
+    opacity: 0.65;
+
+    animation: butterflyFloat 7s ease-in-out infinite;
+}
+
+
+/* =========================================
+   🌿 ANIMATIONS
+========================================= */
+
+@keyframes leafSway {
+
+    0%,
+    100% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(8deg);
+    }
+}
+
+@keyframes leafFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(7deg);
+    }
+}
+
+@keyframes flowerFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes sparkleGarden {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes butterflyFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(-5deg);
+    }
+
+    25% {
+        transform: translate(15px, -10px) rotate(5deg);
+    }
+
+    50% {
+        transform: translate(30px, 5px) rotate(-5deg);
+    }
+
+    75% {
+        transform: translate(15px, 15px) rotate(5deg);
+    }
+}
+.create-package.theme-garden {
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(125, 180, 105, 0.35),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(190, 220, 140, 0.4),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #e8f4df,
+            #f7fbef,
+            #eaf5e5
+        );
+}
+
+/* =========================================
+   ☁️ CLOUD THEME DECORATIONS
+========================================= */
+
+.cloud-decorations {
+    position: absolute;
+    inset: 0;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.create-package:not(.theme-cloud) .cloud-decorations {
+    opacity: 0;
+}
+
+
+/* =========================================
+   ☀️ SUN
+========================================= */
+
+.sky-sun {
+    position: absolute;
+
+    top: 7%;
+    right: 10%;
+
+    font-size: 65px;
+
+    opacity: 0.8;
+
+    filter:
+        drop-shadow(0 0 18px rgba(255, 210, 100, 0.55));
+
+    animation: sunGlow 4s ease-in-out infinite;
+}
+
+@keyframes sunGlow {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+
+/* =========================================
+   ☁️ CLOUDS
+========================================= */
+
+.sky-cloud {
+    position: absolute;
+
+    opacity: 0.8;
+
+    filter:
+        drop-shadow(0 8px 12px rgba(80, 130, 170, 0.12));
+
+    animation: cloudFloat 8s ease-in-out infinite;
+}
+
+.cloud-large {
+    font-size: 65px;
+}
+
+.cloud-medium {
+    font-size: 48px;
+}
+
+.cloud-small {
+    font-size: 32px;
+}
+
+
+/* Cloud positions */
+
+.cloud-one {
+    top: 10%;
+    left: 5%;
+}
+
+.cloud-two {
+    top: 27%;
+    right: 8%;
+
+    animation-delay: 2s;
+}
+
+.cloud-three {
+    top: 42%;
+    left: 8%;
+
+    animation-delay: 1s;
+}
+
+.cloud-four {
+    bottom: 8%;
+    right: 5%;
+
+    animation-delay: 3s;
+}
+
+.cloud-five {
+    bottom: 25%;
+    left: 18%;
+
+    animation-delay: 4s;
+}
+
+
+/* =========================================
+   🌈 RAINBOW
+========================================= */
+
+.sky-rainbow {
+    position: absolute;
+
+    bottom: 12%;
+    left: 7%;
+
+    font-size: 45px;
+
+    opacity: 0.65;
+
+    animation: rainbowFloat 6s ease-in-out infinite;
+}
+
+@keyframes rainbowFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* =========================================
+   🕊️ BIRDS
+========================================= */
+
+.sky-bird {
+    position: absolute;
+
+    color: #718da5;
+
+    font-size: 30px;
+
+    opacity: 0.5;
+
+    animation: birdFly 10s linear infinite;
+}
+
+.bird-one {
+    top: 22%;
+    left: 15%;
+}
+
+.bird-two {
+    top: 35%;
+    left: 25%;
+
+    font-size: 20px;
+
+    animation-delay: 3s;
+}
+
+@keyframes birdFly {
+
+    0% {
+        transform: translateX(-20px);
+    }
+
+    50% {
+        transform: translateX(30px) translateY(-10px);
+    }
+
+    100% {
+        transform: translateX(-20px);
+    }
+}
+
+
+/* =========================================
+   ✨ SPARKLES
+========================================= */
+
+.sky-sparkle {
+    position: absolute;
+
+    color: #ffffff;
+
+    opacity: 0.7;
+
+    text-shadow:
+        0 0 8px rgba(120, 180, 220, 0.7);
+
+    animation: cloudSparkle 3s ease-in-out infinite;
+}
+
+.sparkle-cloud-one {
+    top: 18%;
+    left: 35%;
+
+    font-size: 22px;
+}
+
+.sparkle-cloud-two {
+    bottom: 30%;
+    right: 25%;
+
+    font-size: 18px;
+
+    animation-delay: 1.5s;
+}
+
+@keyframes cloudSparkle {
+
+    0%,
+    100% {
+        opacity: 0.25;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.25);
+    }
+}
+
+
+/* =========================================
+   ○ FLOATING BUBBLES
+========================================= */
+
+.sky-bubble {
+    position: absolute;
+
+    color: #ffffff;
+
+    opacity: 0.5;
+
+    animation: bubbleFloat 5s ease-in-out infinite;
+}
+
+.bubble-cloud-one {
+    top: 30%;
+    left: 35%;
+
+    font-size: 28px;
+}
+
+.bubble-cloud-two {
+    bottom: 20%;
+    right: 20%;
+
+    font-size: 20px;
+
+    animation-delay: 1.5s;
+}
+
+.bubble-cloud-three {
+    top: 55%;
+    right: 12%;
+
+    font-size: 15px;
+
+    animation-delay: 3s;
+}
+
+.create-package.theme-cloud {
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(255, 220, 130, 0.3),
+            transparent 20%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(150, 210, 245, 0.35),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #dff2ff,
+            #eef9ff,
+            #ffffff
+        );
+}
+.create-package.theme-cloud .package-form {
+    background: rgba(255, 255, 255, 0.88);
+
+    border-color: #c9e2f2;
+
+    box-shadow:
+        0 20px 50px rgba(70, 130, 170, 0.12);
+}
+/* =========================================
+   THEME TEXT COLORS
+========================================= */
+
+/* 🌸 BLUSH */
+.create-package.theme-blush .create-heading h1,
+.create-package.theme-blush .package-form h2,
+.create-package.theme-blush .form-section h3 {
+    color: #5a3040;
+}
+
+.create-package.theme-blush .create-heading p {
+    color: #b07b8d;
+}
+
+.create-package.theme-blush .create-heading span,
+.create-package.theme-blush .form-description {
+    color: #806872;
+}
+
+
+/* 🌙 MIDNIGHT */
+.create-package.theme-midnight .create-heading h1,
+.create-package.theme-midnight .package-form h2,
+.create-package.theme-midnight .form-section h3 {
+    color: #f5eaff;
+}
+
+.create-package.theme-midnight .create-heading p {
+    color: #c9a7e8;
+}
+
+.create-package.theme-midnight .create-heading span,
+.create-package.theme-midnight .form-description {
+    color: #c5c9dc;
+}
+
+.create-package.theme-midnight label {
+    color: #ddd6f3;
+}
+
+
+/* 🌿 GARDEN */
+.create-package.theme-garden .create-heading h1,
+.create-package.theme-garden .package-form h2,
+.create-package.theme-garden .form-section h3 {
+    color: #315c38;
+}
+
+.create-package.theme-garden .create-heading p {
+    color: #5d8b62;
+}
+
+.create-package.theme-garden .create-heading span,
+.create-package.theme-garden .form-description {
+    color: #58705a;
+}
+
+.create-package.theme-garden label {
+    color: #45664a;
+}
+
+
+/* ☁️ CLOUD */
+.create-package.theme-cloud .create-heading h1,
+.create-package.theme-cloud .package-form h2,
+.create-package.theme-cloud .form-section h3 {
+    color: #31566f;
+}
+
+.create-package.theme-cloud .create-heading p {
+    color: #6193b5;
+}
+
+.create-package.theme-cloud .create-heading span,
+.create-package.theme-cloud .form-description {
+    color: #607d91;
+}
+
+.create-package.theme-cloud label {
+    color: #4d6d82;
+}
+/* =========================================
+   THEME FORM
+========================================= */
+
+.create-package.theme-midnight .package-form {
+    background: rgba(18, 27, 52, 0.88);
+    border-color: #39466b;
+    color: #f5eaff;
+}
+
+.create-package.theme-midnight input,
+.create-package.theme-midnight textarea {
+    background: #111a31;
+    border-color: #465477;
+    color: #f5eaff;
+}
+
+.create-package.theme-midnight input::placeholder,
+.create-package.theme-midnight textarea::placeholder {
+    color: #8992ad;
+}
+
+
+.create-package.theme-garden .package-form {
+    background: rgba(255, 255, 250, 0.88);
+    border-color: #c9ddc4;
+}
+
+
+.create-package.theme-cloud .package-form {
+    background: rgba(255, 255, 255, 0.88);
+    border-color: #c9e2f2;
+}
+.create-package.theme-midnight .theme-option {
+    color: #ddd6f3;
+    background: #151f3a;
+    border-color: #3d4b70;
+}
+
+.create-package.theme-garden .theme-option {
+    color: #315c38;
+    background: #f1f8ed;
+    border-color: #c4dabb;
+}
+
+.create-package.theme-cloud .theme-option {
+    color: #31566f;
+    background: #f0f8fd;
+    border-color: #c5dfef;
+}

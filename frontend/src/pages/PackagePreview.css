@@ -658,3 +658,1217 @@
 .open-box-button:hover {
     transform: translateY(-1px);
 }
+
+/* =================================
+   THEMES
+================================= */
+
+/* 🌸 BLUSH */
+.preview-box.theme-blush {
+    background: #fff4f7;
+    border-color: #f0c8d5;
+    color: #5a3040;
+}
+
+.preview-box.theme-blush .preview-content-card {
+    background: #fff9fb;
+    border-color: #efd5df;
+}
+
+.preview-box.theme-blush .preview-link {
+    background: #f3c4d4;
+    color: #5a3040;
+}
+
+
+/* 🌙 MIDNIGHT */
+.preview-box.theme-midnight {
+    background: #121a2b;
+    border-color: #35415c;
+    color: #f5f7ff;
+
+    box-shadow:
+        0 20px 50px rgba(10, 15, 30, 0.35);
+}
+
+.preview-box.theme-midnight .preview-names span,
+.preview-box.theme-midnight .preview-title > span {
+    color: #9eacd0;
+}
+
+.preview-box.theme-midnight .preview-names strong,
+.preview-box.theme-midnight .preview-title h2 {
+    color: #ffffff;
+}
+
+.preview-box.theme-midnight .preview-title p,
+.preview-box.theme-midnight .preview-content-card p {
+    color: #c5cce0;
+}
+
+.preview-box.theme-midnight .preview-heart {
+    color: #a9b8ff;
+}
+
+.preview-box.theme-midnight .preview-content-card {
+    background: #1b263d;
+    border-color: #35415c;
+}
+
+.preview-box.theme-midnight .preview-content-card h3 {
+    color: #ffffff;
+}
+
+.preview-box.theme-midnight .preview-link {
+    background: #3b4d7a;
+    color: #ffffff;
+}
+
+.preview-box.theme-midnight .preview-footer {
+    border-color: #35415c;
+}
+
+.preview-box.theme-midnight .preview-footer p {
+    color: #9eacd0;
+}
+
+
+/* 🌿 GARDEN */
+.preview-box.theme-garden {
+    background: #f3f8ef;
+    border-color: #cddfc2;
+    color: #34452f;
+}
+
+.preview-box.theme-garden .preview-names span,
+.preview-box.theme-garden .preview-title > span {
+    color: #78936d;
+}
+
+.preview-box.theme-garden .preview-names strong,
+.preview-box.theme-garden .preview-title h2 {
+    color: #385334;
+}
+
+.preview-box.theme-garden .preview-title p,
+.preview-box.theme-garden .preview-content-card p {
+    color: #65745e;
+}
+
+.preview-box.theme-garden .preview-heart {
+    color: #91aa82;
+}
+
+.preview-box.theme-garden .preview-content-card {
+    background: #f9fcf6;
+    border-color: #d7e4cf;
+}
+
+.preview-box.theme-garden .preview-content-card h3 {
+    color: #385334;
+}
+
+.preview-box.theme-garden .preview-link {
+    background: #c9dcbf;
+    color: #385334;
+}
+
+.preview-box.theme-garden .preview-footer {
+    border-color: #d7e4cf;
+}
+
+.preview-box.theme-garden .preview-footer p {
+    color: #78936d;
+}
+
+
+/* ☁️ CLOUD */
+.preview-box.theme-cloud {
+    background: #f2f8ff;
+    border-color: #d1e2f2;
+    color: #33485c;
+}
+
+.preview-box.theme-cloud .preview-names span,
+.preview-box.theme-cloud .preview-title > span {
+    color: #7895ad;
+}
+
+.preview-box.theme-cloud .preview-names strong,
+.preview-box.theme-cloud .preview-title h2 {
+    color: #33485c;
+}
+
+.preview-box.theme-cloud .preview-title p,
+.preview-box.theme-cloud .preview-content-card p {
+    color: #65798b;
+}
+
+.preview-box.theme-cloud .preview-heart {
+    color: #8eb5d5;
+}
+
+.preview-box.theme-cloud .preview-content-card {
+    background: #f9fcff;
+    border-color: #d8e7f3;
+}
+
+.preview-box.theme-cloud .preview-content-card h3 {
+    color: #33485c;
+}
+
+.preview-box.theme-cloud .preview-link {
+    background: #c9e0f2;
+    color: #33485c;
+}
+
+.preview-box.theme-cloud .preview-footer {
+    border-color: #d8e7f3;
+}
+
+.preview-box.theme-cloud .preview-footer p {
+    color: #7895ad;
+}
+
+/* =========================================
+   COMPLETE PACKAGE THEMES
+========================================= */
+
+
+/* =========================================
+   🌸 BLUSH
+========================================= */
+
+.package-preview.theme-blush {
+    background: linear-gradient(
+        135deg,
+        #fff4f7,
+        #ffe8ef
+    );
+
+    color: #5a3040;
+}
+
+.package-preview.theme-blush .preview-heading p {
+    color: #b07b8d;
+}
+
+.package-preview.theme-blush .preview-heading h1 {
+    color: #5a3040;
+}
+
+.package-preview.theme-blush .preview-heading span {
+    color: #806872;
+}
+
+.package-preview.theme-blush .preview-box {
+    background: #fff;
+    border-color: #ead5dd;
+
+    box-shadow:
+        0 20px 50px rgba(90, 48, 64, 0.12);
+}
+
+.package-preview.theme-blush .preview-names span,
+.package-preview.theme-blush .preview-title > span {
+    color: #b07b8d;
+}
+
+.package-preview.theme-blush .preview-names strong,
+.package-preview.theme-blush .preview-title h2 {
+    color: #5a3040;
+}
+
+.package-preview.theme-blush .preview-title p {
+    color: #806872;
+}
+
+.package-preview.theme-blush .preview-heart {
+    color: #d98fa7;
+}
+
+.package-preview.theme-blush .preview-content-card {
+    background: #fff9fb;
+    border-color: #eadce2;
+}
+
+.package-preview.theme-blush .preview-content-card h3 {
+    color: #5a3040;
+}
+
+.package-preview.theme-blush .preview-content-card p {
+    color: #806872;
+}
+
+.package-preview.theme-blush .preview-link {
+    background: #f3c4d4;
+    color: #5a3040;
+}
+
+.package-preview.theme-blush .preview-footer {
+    border-color: #eadce2;
+}
+
+.package-preview.theme-blush .preview-footer p {
+    color: #a47a88;
+}
+
+
+/* =========================================
+   🌙 MIDNIGHT
+========================================= */
+
+.package-preview.theme-midnight {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(117, 143, 201, 0.25),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(170, 180, 230, 0.15),
+            transparent 20%
+        ),
+        linear-gradient(
+            135deg,
+            #070b17,
+            #10182b,
+            #18233d
+        );
+
+    color: #f5f7ff;
+}
+
+.package-preview.theme-midnight .preview-heading p {
+    color: #9daed8;
+}
+
+.package-preview.theme-midnight .preview-heading h1 {
+    color: #ffffff;
+}
+
+.package-preview.theme-midnight .preview-heading span {
+    color: #b7c1d9;
+}
+
+.package-preview.theme-midnight .preview-box {
+    background:
+        linear-gradient(
+            145deg,
+            #111a2e,
+            #17233d
+        );
+
+    border-color: #34476c;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45);
+}
+
+.package-preview.theme-midnight .preview-names span,
+.package-preview.theme-midnight .preview-title > span {
+    color: #9daed8;
+}
+
+.package-preview.theme-midnight .preview-names strong,
+.package-preview.theme-midnight .preview-title h2 {
+    color: #ffffff;
+}
+
+.package-preview.theme-midnight .preview-title p {
+    color: #c5cee2;
+}
+
+.package-preview.theme-midnight .preview-heart {
+    color: #a9b9ff;
+}
+
+.package-preview.theme-midnight .preview-content-card {
+    background: #1b2944;
+    border-color: #35496f;
+}
+
+.package-preview.theme-midnight .preview-content-card h3 {
+    color: #ffffff;
+}
+
+.package-preview.theme-midnight .preview-content-card p {
+    color: #c5cee2;
+}
+
+.package-preview.theme-midnight .preview-link {
+    background: #405786;
+    color: #ffffff;
+}
+
+.package-preview.theme-midnight .preview-footer {
+    border-color: #35496f;
+}
+
+.package-preview.theme-midnight .preview-footer p {
+    color: #9daed8;
+}
+
+.package-preview.theme-midnight .preview-actions {
+    border-color: #35496f;
+}
+
+.package-preview.theme-midnight .preview-back-button {
+    background: #17233d;
+    border-color: #405477;
+    color: #dce5ff;
+}
+
+.package-preview.theme-midnight .preview-continue-button {
+    background: #526fa8;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   🌿 GARDEN
+========================================= */
+
+.package-preview.theme-garden {
+    background:
+        linear-gradient(
+            135deg,
+            #eef7e9,
+            #f7fbf3
+        );
+
+    color: #34452f;
+}
+
+.package-preview.theme-garden .preview-heading p {
+    color: #78936d;
+}
+
+.package-preview.theme-garden .preview-heading h1 {
+    color: #385334;
+}
+
+.package-preview.theme-garden .preview-heading span {
+    color: #65745e;
+}
+
+.package-preview.theme-garden .preview-box {
+    background: #ffffff;
+    border-color: #cddfc2;
+
+    box-shadow:
+        0 20px 50px rgba(56, 83, 52, 0.12);
+}
+
+.package-preview.theme-garden .preview-names span,
+.package-preview.theme-garden .preview-title > span {
+    color: #78936d;
+}
+
+.package-preview.theme-garden .preview-names strong,
+.package-preview.theme-garden .preview-title h2 {
+    color: #385334;
+}
+
+.package-preview.theme-garden .preview-title p {
+    color: #65745e;
+}
+
+.package-preview.theme-garden .preview-heart {
+    color: #91aa82;
+}
+
+.package-preview.theme-garden .preview-content-card {
+    background: #f8fcf5;
+    border-color: #d7e4cf;
+}
+
+.package-preview.theme-garden .preview-content-card h3 {
+    color: #385334;
+}
+
+.package-preview.theme-garden .preview-content-card p {
+    color: #65745e;
+}
+
+.package-preview.theme-garden .preview-link {
+    background: #c9dcbf;
+    color: #385334;
+}
+
+.package-preview.theme-garden .preview-footer {
+    border-color: #d7e4cf;
+}
+
+.package-preview.theme-garden .preview-footer p {
+    color: #78936d;
+}
+
+
+/* =========================================
+   ☁️ CLOUD
+========================================= */
+
+.package-preview.theme-cloud {
+    background:
+        linear-gradient(
+            135deg,
+            #eaf5ff,
+            #f7fbff
+        );
+
+    color: #33485c;
+}
+
+.package-preview.theme-cloud .preview-heading p {
+    color: #7895ad;
+}
+
+.package-preview.theme-cloud .preview-heading h1 {
+    color: #33485c;
+}
+
+.package-preview.theme-cloud .preview-heading span {
+    color: #65798b;
+}
+
+.package-preview.theme-cloud .preview-box {
+    background: #ffffff;
+    border-color: #d1e2f2;
+
+    box-shadow:
+        0 20px 50px rgba(51, 72, 92, 0.12);
+}
+
+.package-preview.theme-cloud .preview-names span,
+.package-preview.theme-cloud .preview-title > span {
+    color: #7895ad;
+}
+
+.package-preview.theme-cloud .preview-names strong,
+.package-preview.theme-cloud .preview-title h2 {
+    color: #33485c;
+}
+
+.package-preview.theme-cloud .preview-title p {
+    color: #65798b;
+}
+
+.package-preview.theme-cloud .preview-heart {
+    color: #8eb5d5;
+}
+
+.package-preview.theme-cloud .preview-content-card {
+    background: #f8fcff;
+    border-color: #d8e7f3;
+}
+
+.package-preview.theme-cloud .preview-content-card h3 {
+    color: #33485c;
+}
+
+.package-preview.theme-cloud .preview-content-card p {
+    color: #65798b;
+}
+
+.package-preview.theme-cloud .preview-link {
+    background: #c9e0f2;
+    color: #33485c;
+}
+
+.package-preview.theme-cloud .preview-footer {
+    border-color: #d8e7f3;
+}
+
+.package-preview.theme-cloud .preview-footer p {
+    color: #7895ad;
+}
+
+.package-preview.theme-midnight {
+    background: red !important;
+}
+/* =========================================================
+   💌 NOTE THEMES
+   12 combinations:
+   4 Box Themes × 3 Note Styles
+========================================================= */
+
+.note-preview {
+    position: relative;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 30px 28px;
+
+    margin-top: 15px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    text-align: left;
+
+    transition:
+        background 0.7s ease,
+        color 0.7s ease,
+        border-color 0.7s ease,
+        box-shadow 0.7s ease,
+        transform 0.3s ease;
+}
+
+.note-preview:hover {
+    transform: translateY(-2px);
+}
+
+.note-preview h3 {
+    margin: 8px 0 14px;
+
+    font-size: 22px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.note-preview p {
+    margin: 0;
+
+    line-height: 1.8;
+
+    white-space: pre-wrap;
+
+    word-break: break-word;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.note-icon {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 28px;
+
+    margin-bottom: 5px;
+}
+
+.note-decoration {
+    position: absolute;
+
+    top: 12px;
+    right: 18px;
+
+    font-size: 30px;
+
+    opacity: 0.55;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.note-signature {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 25px;
+
+    padding-top: 12px;
+
+    border-top: 1px dashed currentColor;
+
+    text-align: right;
+
+    font-size: 13px;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   🌸 BLUSH THEME
+========================================================= */
+
+
+/* ---------- Blush + Simple ---------- */
+
+.note-preview.theme-blush.note-simple {
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(255, 190, 210, 0.45),
+            transparent 22%
+        ),
+        #fff8fa;
+
+    color: #5a3040;
+
+    border: 1px solid #efd5df;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 30px rgba(170, 90, 115, 0.10);
+}
+
+.note-preview.theme-blush.note-simple .note-decoration::after {
+    content: "♡";
+}
+
+
+/* ---------- Blush + Cute ---------- */
+
+.note-preview.theme-blush.note-cute {
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(255, 180, 205, 0.45),
+            transparent 20%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(255, 205, 220, 0.5),
+            transparent 25%
+        ),
+        #fff0f5;
+
+    color: #69394b;
+
+    border: 2px solid #f0bfd0;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 35px rgba(210, 120, 150, 0.16);
+}
+
+.note-preview.theme-blush.note-cute::before {
+    content: "🌸  ✿  🌷";
+
+    position: absolute;
+
+    left: 18px;
+    bottom: 10px;
+
+    font-size: 22px;
+
+    opacity: 0.55;
+}
+
+.note-preview.theme-blush.note-cute::after {
+    content: "♡  ✨";
+
+    position: absolute;
+
+    right: 18px;
+    bottom: 12px;
+
+    font-size: 20px;
+
+    opacity: 0.5;
+}
+
+
+/* ---------- Blush + Letter ---------- */
+
+.note-preview.theme-blush.note-letter {
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffaf5 0px,
+            #fffaf5 31px,
+            #f0dfe0 32px
+        );
+
+    color: #60484a;
+
+    border: 1px solid #e3cec4;
+
+    border-radius: 8px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    box-shadow:
+        0 10px 25px rgba(100, 70, 60, 0.12);
+}
+
+.note-preview.theme-blush.note-letter .note-decoration::after {
+    content: "💌";
+}
+
+
+/* =========================================================
+   🌙 MIDNIGHT THEME
+========================================================= */
+
+
+/* ---------- Midnight + Simple ---------- */
+
+.note-preview.theme-midnight.note-simple {
+    background:
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(150, 130, 255, 0.25),
+            transparent 25%
+        ),
+        linear-gradient(
+            145deg,
+            #0b1224,
+            #151f3b
+        );
+
+    color: #eeeaff;
+
+    border: 1px solid #394b76;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.30);
+}
+
+.note-preview.theme-midnight.note-simple .note-decoration::after {
+    content: "✦";
+    color: #d6c8ff;
+}
+
+
+/* ---------- Midnight + Cute ---------- */
+
+.note-preview.theme-midnight.note-cute {
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(130, 110, 255, 0.25),
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(190, 150, 255, 0.2),
+            transparent 25%
+        ),
+        #111a34;
+
+    color: #f3edff;
+
+    border: 2px solid #65558e;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 18px 40px rgba(25, 15, 70, 0.45);
+}
+
+.note-preview.theme-midnight.note-cute::before {
+    content: "✦  ⋆  ✧  ✦";
+
+    position: absolute;
+
+    top: 10px;
+    left: 18px;
+
+    color: #d8caff;
+
+    font-size: 18px;
+
+    opacity: 0.7;
+}
+
+.note-preview.theme-midnight.note-cute::after {
+    content: "☾  ✦";
+
+    position: absolute;
+
+    right: 20px;
+    bottom: 12px;
+
+    color: #c9b8ff;
+
+    font-size: 24px;
+
+    opacity: 0.7;
+}
+
+
+/* ---------- Midnight + Letter ---------- */
+
+.note-preview.theme-midnight.note-letter {
+    background:
+        linear-gradient(
+            145deg,
+            #0a1225,
+            #101c35
+        );
+
+    color: #e9e3ff;
+
+    border: 1px solid #465477;
+
+    border-radius: 8px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.4);
+}
+
+.note-preview.theme-midnight.note-letter::before {
+    content: "✦";
+
+    position: absolute;
+
+    top: 12px;
+    right: 18px;
+
+    color: #cdbdff;
+
+    font-size: 22px;
+}
+
+.note-preview.theme-midnight.note-letter .note-signature {
+    color: #c8b9ed;
+}
+
+
+/* =========================================================
+   🌿 GARDEN THEME
+========================================================= */
+
+
+/* ---------- Garden + Simple ---------- */
+
+.note-preview.theme-garden.note-simple {
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(160, 200, 130, 0.35),
+            transparent 25%
+        ),
+        #f5faef;
+
+    color: #34533a;
+
+    border: 1px solid #c9ddc1;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 30px rgba(80, 120, 70, 0.12);
+}
+
+.note-preview.theme-garden.note-simple .note-decoration::after {
+    content: "🌿";
+}
+
+
+/* ---------- Garden + Cute ---------- */
+
+.note-preview.theme-garden.note-cute {
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(175, 215, 145, 0.45),
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(220, 235, 175, 0.5),
+            transparent 25%
+        ),
+        #f0f8ea;
+
+    color: #315638;
+
+    border: 2px solid #bcd3b1;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 35px rgba(70, 110, 65, 0.15);
+}
+
+.note-preview.theme-garden.note-cute::before {
+    content: "🌿  🍃  🌱";
+
+    position: absolute;
+
+    left: 15px;
+    bottom: 10px;
+
+    font-size: 21px;
+
+    opacity: 0.65;
+}
+
+.note-preview.theme-garden.note-cute::after {
+    content: "🌼  🌸";
+
+    position: absolute;
+
+    right: 15px;
+    top: 12px;
+
+    font-size: 20px;
+
+    opacity: 0.65;
+}
+
+
+/* ---------- Garden + Letter ---------- */
+
+.note-preview.theme-garden.note-letter {
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fafbf3 0px,
+            #fafbf3 31px,
+            #dce6d1 32px
+        );
+
+    color: #42563f;
+
+    border: 1px solid #c5d3ba;
+
+    border-radius: 8px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    box-shadow:
+        0 10px 25px rgba(70, 100, 60, 0.12);
+}
+
+.note-preview.theme-garden.note-letter::before {
+    content: "🌿";
+
+    position: absolute;
+
+    top: 12px;
+    right: 18px;
+
+    font-size: 24px;
+
+    opacity: 0.6;
+}
+
+.note-preview.theme-garden.note-letter::after {
+    content: "🍃  🌱";
+
+    position: absolute;
+
+    left: 15px;
+    bottom: 10px;
+
+    font-size: 20px;
+
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   ☁️ CLOUD THEME
+========================================================= */
+
+
+/* ---------- Cloud + Simple ---------- */
+
+.note-preview.theme-cloud.note-simple {
+    background:
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(180, 220, 245, 0.45),
+            transparent 25%
+        ),
+        #f5fbff;
+
+    color: #36596d;
+
+    border: 1px solid #cde5f2;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 30px rgba(80, 140, 175, 0.12);
+}
+
+.note-preview.theme-cloud.note-simple .note-decoration::after {
+    content: "☁️";
+}
+
+
+/* ---------- Cloud + Cute ---------- */
+
+.note-preview.theme-cloud.note-cute {
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(190, 225, 250, 0.5),
+            transparent 23%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(210, 240, 255, 0.55),
+            transparent 25%
+        ),
+        #f1faff;
+
+    color: #355c72;
+
+    border: 2px solid #c4e2f2;
+
+    border-radius: 32px;
+
+    box-shadow:
+        0 15px 35px rgba(80, 150, 190, 0.14);
+}
+
+.note-preview.theme-cloud.note-cute::before {
+    content: "☁️   ☁️   ✦";
+
+    position: absolute;
+
+    left: 15px;
+    top: 10px;
+
+    font-size: 18px;
+
+    opacity: 0.65;
+}
+
+.note-preview.theme-cloud.note-cute::after {
+    content: "☁️  ✨";
+
+    position: absolute;
+
+    right: 18px;
+    bottom: 12px;
+
+    font-size: 22px;
+
+    opacity: 0.65;
+}
+
+
+/* ---------- Cloud + Letter ---------- */
+
+.note-preview.theme-cloud.note-letter {
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #ffffff 0px,
+            #ffffff 31px,
+            #d9eaf3 32px
+        );
+
+    color: #456577;
+
+    border: 1px solid #cddfea;
+
+    border-radius: 8px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    box-shadow:
+        0 10px 25px rgba(70, 120, 150, 0.12);
+}
+
+.note-preview.theme-cloud.note-letter::before {
+    content: "☁️";
+
+    position: absolute;
+
+    top: 10px;
+    right: 18px;
+
+    font-size: 24px;
+
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   NOTE STYLE DIFFERENCES
+========================================================= */
+
+
+/* Simple */
+
+.note-preview.note-simple {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* Cute */
+
+.note-preview.note-cute h3 {
+    font-size: 24px;
+
+    letter-spacing: 0.2px;
+}
+
+.note-preview.note-cute .note-icon {
+    transform: rotate(-5deg);
+}
+
+
+/* Letter */
+
+.note-preview.note-letter {
+    padding: 35px 32px;
+
+    line-height: 1.9;
+}
+
+.note-preview.note-letter h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 24px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .note-preview {
+        padding: 25px 20px;
+
+        border-radius: 18px;
+    }
+
+    .note-preview.note-cute {
+        border-radius: 24px;
+    }
+
+    .note-preview.note-letter {
+        padding: 28px 22px;
+    }
+
+    .note-preview h3 {
+        font-size: 20px;
+    }
+
+    .note-preview p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .note-decoration {
+        font-size: 24px;
+    }
+
+}

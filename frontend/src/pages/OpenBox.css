@@ -1,0 +1,862 @@
+/* =========================================
+   OPEN BOX PAGE
+========================================= */
+
+.open-box-page {
+    position: relative;
+
+    min-height: calc(100vh - 74px);
+
+    padding: 70px 20px 50px;
+
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            color-mix(in srgb, var(--primary) 13%, transparent),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            color-mix(in srgb, var(--secondary) 18%, transparent),
+            transparent 32%
+        ),
+        var(--background);
+
+    transition:
+        background 0.6s ease,
+        color 0.6s ease;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.open-box-container {
+    position: relative;
+
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.open-box-heading {
+    margin-bottom: 20px;
+}
+
+.open-small-text {
+    margin: 0 0 8px;
+
+    color: var(--primary);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.open-box-heading h1 {
+    margin: 0 0 12px;
+
+    color: var(--text);
+
+    font-family: "Pacifico", cursive;
+
+    font-size: clamp(32px, 6vw, 48px);
+    font-weight: 400;
+
+    transition: color 0.5s ease;
+}
+
+.open-box-heading > p:last-child {
+    margin: 0;
+
+    color: var(--text);
+
+    opacity: 0.7;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   BOX ILLUSTRATION
+========================================= */
+
+.open-box-illustration {
+    position: relative;
+
+    width: 260px;
+    height: 220px;
+
+    margin: 0 auto 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Shadow */
+
+.open-box-shadow {
+    position: absolute;
+
+    bottom: 25px;
+
+    width: 190px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: color-mix(
+        in srgb,
+        var(--text) 12%,
+        transparent
+    );
+
+    filter: blur(8px);
+}
+
+
+/* Gift box */
+
+.open-gift-box {
+    position: relative;
+
+    width: 150px;
+    height: 120px;
+
+    margin-top: 20px;
+
+    animation: gentleFloat 4s ease-in-out infinite;
+}
+
+
+/* =========================================
+   GIFT LID
+========================================= */
+
+.gift-lid {
+    position: absolute;
+
+    top: 0;
+    left: -8px;
+
+    width: 166px;
+    height: 38px;
+
+    border-radius: 10px 10px 6px 6px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    box-shadow:
+        0 8px 18px
+        color-mix(
+            in srgb,
+            var(--text) 12%,
+            transparent
+        );
+
+    z-index: 3;
+}
+
+
+/* =========================================
+   GIFT BODY
+========================================= */
+
+.gift-body {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 150px;
+    height: 95px;
+
+    border-radius: 5px 5px 15px 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            color-mix(
+                in srgb,
+                var(--primary) 85%,
+                white
+            ),
+            var(--secondary)
+        );
+
+    box-shadow:
+        0 15px 25px
+        color-mix(
+            in srgb,
+            var(--text) 10%,
+            transparent
+        );
+}
+
+
+/* =========================================
+   RIBBONS
+========================================= */
+
+.gift-ribbon-vertical {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 25px;
+    height: 100%;
+
+    transform: translateX(-50%);
+
+    background:
+        color-mix(
+            in srgb,
+            var(--background) 55%,
+            var(--primary)
+        );
+
+    opacity: 0.8;
+}
+
+.gift-ribbon-horizontal {
+    display: none;
+}
+
+
+/* Heart on lid */
+
+.gift-ribbon {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: var(--background);
+
+    font-size: 22px;
+
+    z-index: 5;
+}
+
+
+/* =========================================
+   FLOATING DECORATIONS
+========================================= */
+
+.floating-heart {
+    position: absolute;
+
+    color: var(--primary);
+
+    font-size: 25px;
+
+    animation:
+        floatingHeart 3s ease-in-out infinite;
+}
+
+.heart-one {
+    top: 25px;
+    left: 25px;
+
+    animation-delay: 0s;
+}
+
+.heart-two {
+    top: 55px;
+    right: 20px;
+
+    font-size: 20px;
+
+    animation-delay: 1s;
+}
+
+.heart-three {
+    bottom: 35px;
+    right: 40px;
+
+    font-size: 18px;
+
+    animation-delay: 1.8s;
+}
+
+
+/* =========================================
+   OPEN CARD
+========================================= */
+
+.open-box-card {
+    width: 100%;
+
+    padding: 35px 40px;
+
+    border: 1px solid
+        color-mix(
+            in srgb,
+            var(--primary) 18%,
+            transparent
+        );
+
+    border-radius: 28px;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--background) 94%,
+            var(--primary)
+        );
+
+    box-shadow:
+        0 20px 55px
+        color-mix(
+            in srgb,
+            var(--text) 9%,
+            transparent
+        );
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        background 0.5s ease,
+        border-color 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+
+/* =========================================
+   CARD ICON
+========================================= */
+
+.card-icon {
+    width: 52px;
+    height: 52px;
+
+    margin: 0 auto 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--primary) 12%,
+            transparent
+        );
+
+    font-size: 25px;
+}
+
+
+/* =========================================
+   CARD TEXT
+========================================= */
+
+.open-box-card h2 {
+    margin: 0 0 8px;
+
+    color: var(--text);
+
+    font-size: 24px;
+
+    transition: color 0.5s ease;
+}
+
+.open-box-card > p {
+    max-width: 430px;
+
+    margin: 0 auto 25px;
+
+    color: var(--text);
+
+    opacity: 0.68;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.open-box-form {
+    text-align: left;
+}
+
+.open-box-form label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.input-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+
+    left: 15px;
+
+    font-size: 16px;
+
+    pointer-events: none;
+}
+
+.input-wrapper input {
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 15px 0 44px;
+
+    border: 1px solid
+        color-mix(
+            in srgb,
+            var(--primary) 22%,
+            transparent
+        );
+
+    border-radius: 14px;
+
+    outline: none;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--background) 90%,
+            var(--primary)
+        );
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.4s ease;
+}
+
+.input-wrapper input::placeholder {
+    color: var(--text);
+
+    opacity: 0.45;
+}
+
+.input-wrapper input:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 4px
+        color-mix(
+            in srgb,
+            var(--primary) 10%,
+            transparent
+        );
+}
+
+
+/* =========================================
+   OPEN BUTTON
+========================================= */
+
+.open-button {
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    color: var(--text);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px
+        color-mix(
+            in srgb,
+            var(--primary) 20%,
+            transparent
+        );
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.open-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px
+        color-mix(
+            in srgb,
+            var(--primary) 27%,
+            transparent
+        );
+}
+
+.open-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.open-divider {
+    position: relative;
+
+    margin: 24px 0;
+
+    text-align: center;
+}
+
+.open-divider::before {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 0;
+    right: 0;
+
+    height: 1px;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--primary) 15%,
+            transparent
+        );
+}
+
+.open-divider span {
+    position: relative;
+
+    padding: 0 15px;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    opacity: 0.5;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   CREATE LINK
+========================================= */
+
+.create-box-link {
+    border: none;
+
+    background: transparent;
+
+    color: var(--primary);
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.create-box-link:hover {
+    opacity: 0.75;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.open-box-footer {
+    margin-top: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.open-box-footer button {
+    border: none;
+
+    background: transparent;
+
+    color: var(--primary);
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.open-box-footer span {
+    color: var(--text);
+
+    opacity: 0.5;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   BACKGROUND DECORATIONS
+========================================= */
+
+.open-decoration {
+    position: absolute;
+
+    color: var(--primary);
+
+    opacity: 0.25;
+
+    pointer-events: none;
+
+    animation: decorationFloat 5s ease-in-out infinite;
+}
+
+.decoration-heart {
+    top: 18%;
+    left: 8%;
+
+    font-size: 50px;
+}
+
+.decoration-flower {
+    bottom: 15%;
+    left: 12%;
+
+    font-size: 42px;
+
+    animation-delay: 1s;
+}
+
+.decoration-sparkle {
+    top: 25%;
+    right: 10%;
+
+    font-size: 35px;
+
+    animation-delay: 2s;
+}
+
+.decoration-star {
+    bottom: 20%;
+    right: 14%;
+
+    font-size: 45px;
+
+    animation-delay: 1.5s;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes gentleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(-1deg);
+    }
+}
+
+
+@keyframes floatingHeart {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
+
+@keyframes decorationFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 700px) {
+
+    .open-box-page {
+        padding: 50px 18px 35px;
+    }
+
+    .open-box-card {
+        padding: 30px 25px;
+    }
+
+    .open-decoration {
+        opacity: 0.15;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .open-box-page {
+        min-height: calc(100vh - 68px);
+
+        padding: 35px 15px 30px;
+    }
+
+    .open-box-heading {
+        margin-bottom: 5px;
+    }
+
+    .open-box-heading h1 {
+        font-size: 34px;
+    }
+
+    .open-box-illustration {
+        width: 220px;
+        height: 190px;
+    }
+
+    .open-box-card {
+        padding: 28px 18px;
+
+        border-radius: 22px;
+    }
+
+    .open-box-card h2 {
+        font-size: 21px;
+    }
+
+    .open-box-footer {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .decoration-heart,
+    .decoration-flower,
+    .decoration-sparkle,
+    .decoration-star {
+        display: none;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+
+    .open-box-heading h1 {
+        font-size: 30px;
+    }
+
+    .open-box-card {
+        padding: 25px 15px;
+    }
+
+    .open-box-heading > p:last-child {
+        font-size: 13px;
+    }
+}

@@ -2,15 +2,13 @@ const DB_NAME = "littleBoxDB";
 const DB_VERSION = 1;
 const STORE_NAME = "packages";
 
-
 /*
-==========================================
+=========================================
 OPEN DATABASE
-==========================================
+=========================================
 */
 
 const openDatabase = () => {
-
     return new Promise((resolve, reject) => {
 
         const request = indexedDB.open(
@@ -18,56 +16,40 @@ const openDatabase = () => {
             DB_VERSION
         );
 
-
         request.onupgradeneeded = (event) => {
 
             const db = event.target.result;
-
 
             if (
                 !db.objectStoreNames.contains(
                     STORE_NAME
                 )
             ) {
-
                 db.createObjectStore(
                     STORE_NAME,
                     {
                         keyPath: "id"
                     }
                 );
-
             }
-
         };
-
 
         request.onsuccess = () => {
-
-            resolve(
-                request.result
-            );
-
+            resolve(request.result);
         };
 
-
         request.onerror = () => {
-
-            reject(
-                request.error
-            );
-
+            reject(request.error);
         };
 
     });
-
 };
 
 
 /*
-==========================================
+=========================================
 SAVE PACKAGE
-==========================================
+=========================================
 */
 
 export const savePackage = async (
@@ -75,9 +57,7 @@ export const savePackage = async (
     packageData
 ) => {
 
-    const db =
-        await openDatabase();
-
+    const db = await openDatabase();
 
     return new Promise(
         (resolve, reject) => {
@@ -88,57 +68,50 @@ export const savePackage = async (
                     "readwrite"
                 );
 
-
             const store =
                 transaction.objectStore(
                     STORE_NAME
                 );
 
+            /*
+             * IMPORTANT:
+             * Always store ID as a string.
+             */
 
-            const request =
-                store.put({
+            const id = String(packageId);
 
-                    id: packageId,
+            const request = store.put({
 
-                    data: packageData
+                id: id,
 
-                });
+                data: packageData
 
+            });
 
             request.onsuccess = () => {
-
                 resolve(true);
-
             };
 
-
             request.onerror = () => {
-
-                reject(
-                    request.error
-                );
-
+                reject(request.error);
             };
 
         }
     );
-
 };
 
 
 /*
-==========================================
+=========================================
 GET PACKAGE
-==========================================
+=========================================
 */
 
 export const getPackage = async (
     packageId
 ) => {
 
-    const db =
-        await openDatabase();
-
+    const db = await openDatabase();
 
     return new Promise(
         (resolve, reject) => {
@@ -149,35 +122,42 @@ export const getPackage = async (
                     "readonly"
                 );
 
-
             const store =
                 transaction.objectStore(
                     STORE_NAME
                 );
 
+            /*
+             * IMPORTANT:
+             * URL parameter is converted
+             * to string before searching.
+             */
+
+            const id = String(packageId);
 
             const request =
-                store.get(packageId);
-
+                store.get(id);
 
             request.onsuccess = () => {
 
                 if (!request.result) {
 
+                    console.log(
+                        "Package not found:",
+                        id
+                    );
+
                     resolve(null);
 
                     return;
-
                 }
-
 
                 const packageData =
                     request.result.data;
 
-
                 /*
                 ==================================
-                RECREATE VIDEO URLS
+                RECREATE VIDEO URL
                 ==================================
                 */
 
@@ -190,8 +170,7 @@ export const getPackage = async (
                             (content) => {
 
                                 if (
-                                    content.type ===
-                                        "video" &&
+                                    content.type === "video" &&
                                     content.file
                                 ) {
 
@@ -200,17 +179,11 @@ export const getPackage = async (
                                             content.file
                                         );
 
-
                                     return {
-
                                         ...content,
-
                                         videoUrl
-
                                     };
-
                                 }
-
 
                                 return content;
 
@@ -219,13 +192,9 @@ export const getPackage = async (
 
                 }
 
-
-                resolve(
-                    packageData
-                );
+                resolve(packageData);
 
             };
-
 
             request.onerror = () => {
 
@@ -237,5 +206,4 @@ export const getPackage = async (
 
         }
     );
-
 };

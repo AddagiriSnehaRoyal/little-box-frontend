@@ -4,6 +4,9 @@ import Home from "./pages/Home";
 import CreatePackage from "./pages/CreatePackage";
 import AddContent from "./pages/AddContent";
 import PackagePreview from "./pages/PackagePreview";
+import OpenBox from "./pages/OpenBox";
+import PackageReveal from "./pages/PackageReveal";
+import ScrollToTop from "./ScrollToTop";
 
 import Navbar from "./components/common/Navbar";
 
@@ -13,6 +16,8 @@ function App() {
   return (
 
     <BrowserRouter>
+
+      <ScrollToTop />
 
       <Navbar />
 
@@ -38,12 +43,19 @@ function App() {
           element={<PackagePreview />}
         />
 
+        {/* <Route
+          path="/package/:packageId"
+          element={<PackageReveal />}
+        /> */}
+
+        <Route path="/open" element={<OpenBox />} />
+
         <Route
-          path="/package/:id"
-          element={<PackagePreview />}
+          path="/package/:packageId"
+          element={<PackageReveal />}
         />
 
-        
+
 
       </Routes>
 

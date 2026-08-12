@@ -336,163 +336,163 @@ function AddContent() {
     // ADD VIDEO
     // --------------------------------
 
-const addVideo = async (newVideo) => {
+    const addVideo = async (newVideo) => {
 
-    try {
+        try {
 
-        console.log("Uploading video...");
+            console.log("Uploading video...");
 
-        const cloudinaryUrl =
-            await uploadToCloudinary(
-                newVideo.file
+            const cloudinaryUrl =
+                await uploadToCloudinary(
+                    newVideo.file
+                );
+
+            const videoForPackage = {
+
+                id: newVideo.id,
+
+                type: "video",
+
+                title: newVideo.title,
+
+                videoUrl: cloudinaryUrl
+
+            };
+
+            setPackageData(
+                (previousData) => ({
+
+                    ...previousData,
+
+                    contents: [
+
+                        ...previousData.contents,
+
+                        videoForPackage
+
+                    ]
+
+                })
             );
 
-        const videoForPackage = {
+            setSelectedContent(null);
 
-            id: newVideo.id,
+            console.log(
+                "Video uploaded successfully:",
+                cloudinaryUrl
+            );
 
-            type: "video",
+        } catch (error) {
 
-            title: newVideo.title,
+            console.error(
+                "Unable to upload video:",
+                error
+            );
 
-            videoUrl: cloudinaryUrl
+            alert(
+                "Unable to upload the video. Please try again."
+            );
 
-        };
+        }
 
-        setPackageData(
-            (previousData) => ({
-
-                ...previousData,
-
-                contents: [
-
-                    ...previousData.contents,
-
-                    videoForPackage
-
-                ]
-
-            })
-        );
-
-        setSelectedContent(null);
-
-        console.log(
-            "Video uploaded successfully:",
-            cloudinaryUrl
-        );
-
-    } catch (error) {
-
-        console.error(
-            "Unable to upload video:",
-            error
-        );
-
-        alert(
-            "Unable to upload the video. Please try again."
-        );
-
-    }
-
-};
+    };
 
 
     // --------------------------------
     // ADD VOICE
     // --------------------------------
 
-const addVoice = async (newVoice) => {
+    const addVoice = async (newVoice) => {
 
-    try {
+        try {
 
-        console.log("Uploading voice...");
+            console.log("Uploading voice...");
 
 
-        // Upload voice file to Cloudinary
-        const cloudinaryUrl =
-            await uploadToCloudinary(
-                newVoice.file
+            // Upload voice file to Cloudinary
+            const cloudinaryUrl =
+                await uploadToCloudinary(
+                    newVoice.file
+                );
+
+
+            console.log(
+                "Voice uploaded successfully:",
+                cloudinaryUrl
             );
 
 
-        console.log(
-            "Voice uploaded successfully:",
-            cloudinaryUrl
-        );
+            // Create voice object with permanent URL
+            const voiceForPackage = {
+
+                id: newVoice.id,
+
+                type: "voice",
+
+                title: newVoice.title,
+
+                audioUrl: cloudinaryUrl
+
+            };
 
 
-        // Create voice object with permanent URL
-        const voiceForPackage = {
+            // Add voice to package
+            setPackageData(
+                (previousData) => ({
 
-            id: newVoice.id,
+                    ...previousData,
 
-            type: "voice",
+                    contents: [
 
-            title: newVoice.title,
+                        ...previousData.contents,
 
-            audioUrl: cloudinaryUrl
+                        voiceForPackage
 
-        };
+                    ]
 
-
-        // Add voice to package
-        setPackageData(
-            (previousData) => ({
-
-                ...previousData,
-
-                contents: [
-
-                    ...previousData.contents,
-
-                    voiceForPackage
-
-                ]
-
-            })
-        );
+                })
+            );
 
 
-        setSelectedContent(null);
+            setSelectedContent(null);
 
 
-    } catch (error) {
+        } catch (error) {
 
-        console.error(
-            "Unable to upload voice:",
-            error
-        );
+            console.error(
+                "Unable to upload voice:",
+                error
+            );
 
-        alert(
-            "Unable to upload the voice message. Please try again."
-        );
+            alert(
+                "Unable to upload the voice message. Please try again."
+            );
 
-    }
+        }
 
-};
+    };
 
 
     // --------------------------------
     // ADD LOCATION
     // --------------------------------
 
-const addLocation = (newLocation) => {
+    const addLocation = (newLocation) => {
 
-    setPackageData((previousData) => ({
+        setPackageData((previousData) => ({
 
-        ...previousData,
+            ...previousData,
 
-        contents: [
-            ...previousData.contents,
-            newLocation
-        ]
+            contents: [
+                ...previousData.contents,
+                newLocation
+            ]
 
-    }));
+        }));
 
-    setSelectedContent(null);
+        setSelectedContent(null);
 
-};
+    };
 
 
     // --------------------------------
@@ -529,22 +529,22 @@ const addLocation = (newLocation) => {
     // ADD GIFT
     // --------------------------------
 
-const addGift = (newGift) => {
+    const addGift = (newGift) => {
 
-    setPackageData((previousData) => ({
+        setPackageData((previousData) => ({
 
-        ...previousData,
+            ...previousData,
 
-        contents: [
-            ...previousData.contents,
-            newGift
-        ]
+            contents: [
+                ...previousData.contents,
+                newGift
+            ]
 
-    }));
+        }));
 
-    setSelectedContent(null);
+        setSelectedContent(null);
 
-};
+    };
 
 
     // --------------------------------
@@ -711,9 +711,10 @@ const addGift = (newGift) => {
 
     return (
 
-        <main className="add-content">
+        <main className={`add-content theme-${packageData.theme}`}>
 
             <div className="add-content-container">
+
 
 
                 {/* HEADING */}
@@ -877,12 +878,11 @@ const addGift = (newGift) => {
                                     key={content.id}
                                     type="button"
 
-                                    className={`content-type-card ${
-                                        selectedContent ===
-                                        content.id
+                                    className={`content-type-card ${selectedContent ===
+                                            content.id
                                             ? "selected"
                                             : ""
-                                    }`}
+                                        }`}
 
                                     onClick={() =>
                                         setSelectedContent(
@@ -1322,10 +1322,9 @@ const addGift = (newGift) => {
 
                                             <button
                                                 type="button"
+                                                className="remove-drawing-button"
                                                 onClick={() =>
-                                                    removeContent(
-                                                        drawing.id
-                                                    )
+                                                    removeContent(drawing.id)
                                                 }
                                             >
                                                 Remove Drawing
@@ -1408,6 +1407,14 @@ const addGift = (newGift) => {
 
                         <button
                             type="button"
+                            className={`back-button theme-${packageData.theme}`}
+                            onClick={() => navigate("/create")}
+                        >
+                            ← Back
+                        </button>
+
+                        <button
+                            type="button"
                             className="primary-button"
                             onClick={() =>
                                 navigate(
@@ -1423,13 +1430,13 @@ const addGift = (newGift) => {
 
                     {/* DEBUG DATA */}
 
-                    <pre className="debug-data">
+                    {/* <pre className="debug-data">
                         {JSON.stringify(
                             packageData,
                             null,
                             2
                         )}
-                    </pre>
+                    </pre> */}
 
 
                 </div>

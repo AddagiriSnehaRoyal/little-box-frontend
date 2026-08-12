@@ -366,3 +366,426 @@
     }
 
 }
+/* =========================================
+   THEMES
+========================================= */
+
+.add-content {
+    min-height: 100vh;
+
+    transition:
+        background 0.8s ease,
+        color 0.8s ease;
+}
+
+.add-content.theme-blush {
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(255, 170, 195, 0.35),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(255, 200, 220, 0.4),
+            transparent 30%
+        ),
+        #fff1f5;
+}
+
+.add-content.theme-midnight {
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(120, 130, 220, 0.25),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 15% 75%,
+            rgba(80, 100, 180, 0.2),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #050914,
+            #0c1428,
+            #172542
+        );
+
+    color: white;
+}
+
+.add-content.theme-garden {
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(125, 180, 105, 0.3),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(190, 220, 140, 0.4),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #e8f4df,
+            #f7fbef
+        );
+}
+
+.add-content.theme-cloud {
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(255, 220, 130, 0.25),
+            transparent 20%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(150, 210, 245, 0.35),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #dff2ff,
+            #eef9ff,
+            #ffffff
+        );
+}
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-bottom: 25px;
+    padding: 10px 16px;
+
+    border: 1px solid #e5cbd4;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    color: #6b4b57;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.back-button:hover {
+    transform: translateX(-3px);
+
+    background: #fff5f8;
+
+    box-shadow:
+        0 5px 15px rgba(90, 48, 64, 0.08);
+}
+/* =========================================================
+   BACK BUTTON - THEME BASE
+========================================================= */
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-bottom: 25px;
+    padding: 10px 17px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.5s ease,
+        color 0.5s ease,
+        border-color 0.5s ease,
+        box-shadow 0.5s ease,
+        transform 0.25s ease;
+}
+
+.back-button:hover {
+    transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   🌸 BLUSH
+========================================================= */
+
+.back-button.theme-blush {
+    background: #fff4f7;
+
+    color: #6b3d4d;
+
+    border: 1px solid #e8c5d2;
+
+    box-shadow:
+        0 5px 15px rgba(190, 100, 130, 0.08);
+}
+
+.back-button.theme-blush:hover {
+    background: #ffe8ef;
+
+    box-shadow:
+        0 7px 18px rgba(190, 100, 130, 0.15);
+}
+
+
+/* =========================================================
+   🌙 MIDNIGHT
+========================================================= */
+
+.back-button.theme-midnight {
+    background: #141e38;
+
+    color: #eee8ff;
+
+    border: 1px solid #46577f;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.25);
+}
+
+.back-button.theme-midnight:hover {
+    background: #1c2949;
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   🌿 GARDEN
+========================================================= */
+
+.back-button.theme-garden {
+    background: #f1f8ec;
+
+    color: #38583c;
+
+    border: 1px solid #c4d8ba;
+
+    box-shadow:
+        0 5px 15px rgba(70, 110, 65, 0.08);
+}
+
+.back-button.theme-garden:hover {
+    background: #e5f1dc;
+
+    box-shadow:
+        0 7px 18px rgba(70, 110, 65, 0.15);
+}
+
+
+/* =========================================================
+   ☁️ CLOUD
+========================================================= */
+
+.back-button.theme-cloud {
+    background: #f1faff;
+
+    color: #3e6174;
+
+    border: 1px solid #c6dfed;
+
+    box-shadow:
+        0 5px 15px rgba(70, 130, 165, 0.08);
+}
+
+.back-button.theme-cloud:hover {
+    background: #e3f4ff;
+
+    box-shadow:
+        0 7px 18px rgba(70, 130, 165, 0.15);
+}
+
+
+/* =========================================================
+   📱 MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .back-button {
+        width: 100%;
+
+        justify-content: center;
+
+        margin-bottom: 20px;
+    }
+
+}
+/* =========================================
+   ADD CONTENT ACTIONS
+========================================= */
+
+.content-actions {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-button {
+    padding: 12px 20px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.5s ease,
+        color 0.5s ease,
+        border-color 0.5s ease,
+        box-shadow 0.5s ease,
+        transform 0.25s ease;
+}
+
+.back-button:hover {
+    transform: translateX(-3px);
+}
+
+
+/* 🌸 Blush */
+
+.back-button.theme-blush {
+    background: #fff4f7;
+    color: #6b3d4d;
+    border: 1px solid #e8c5d2;
+}
+
+.back-button.theme-blush:hover {
+    background: #ffe8ef;
+}
+
+
+/* 🌙 Midnight */
+
+.back-button.theme-midnight {
+    background: #141e38;
+    color: #eee8ff;
+    border: 1px solid #46577f;
+}
+
+.back-button.theme-midnight:hover {
+    background: #1d2a4b;
+}
+
+
+/* 🌿 Garden */
+
+.back-button.theme-garden {
+    background: #f1f8ec;
+    color: #38583c;
+    border: 1px solid #c4d8ba;
+}
+
+.back-button.theme-garden:hover {
+    background: #e5f1dc;
+}
+
+
+/* ☁️ Cloud */
+
+.back-button.theme-cloud {
+    background: #f1faff;
+    color: #3e6174;
+    border: 1px solid #c6dfed;
+}
+
+.back-button.theme-cloud:hover {
+    background: #e3f4ff;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .content-actions {
+        flex-direction: column-reverse;
+    }
+
+    .back-button,
+    .preview-button {
+        width: 100%;
+    }
+
+}
+/* =========================================
+   REMOVE DRAWING BUTTON
+========================================= */
+
+.remove-drawing-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    margin-top: 10px;
+    padding: 9px 16px;
+
+    border: 1px solid #e2b8c5;
+    border-radius: 10px;
+
+    background: #fff5f7;
+    color: #8f4358;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease;
+}
+
+.remove-drawing-button:hover {
+    background: #ffe4eb;
+    color: #7d3047;
+    border-color: #d89aaa;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(120, 50, 70, 0.12);
+}
+
+.remove-drawing-button:active {
+    transform: translateY(0);
+}
