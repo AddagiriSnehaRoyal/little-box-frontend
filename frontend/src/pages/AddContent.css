@@ -789,3 +789,12 @@
 .remove-drawing-button:active {
     transform: translateY(0);
 }
+/* =========================================
+   CONTENT EDITOR SCROLL AREA
+========================================= */
+
+.content-editor-area {
+    width: 100%;
+    scroll-margin-top: 90px;
+    margin-bottom: 35px;
+}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "./AddContent.css";
@@ -18,6 +19,7 @@ import { usePackage } from "../context/PackageContext";
 function AddContent() {
 
     const navigate = useNavigate();
+    const editorRef = useRef(null);
 
     const {
         packageData,
@@ -37,6 +39,17 @@ function AddContent() {
 
     const [noteStyle, setNoteStyle] =
         useState("cute");
+
+    useEffect(() => {
+        if (selectedContent) {
+            setTimeout(() => {
+                editorRef.current?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }, 100);
+        }
+    }, [selectedContent]);
 
 
     // --------------------------------
@@ -750,123 +763,127 @@ function AddContent() {
                         as you want.
                     </p>
 
+                    <div
+                        ref={editorRef}
+                        className="content-editor-area"
+                    >
 
-                    {/* NOTE EDITOR */}
+                        {/* NOTE EDITOR */}
 
-                    {selectedContent === "note" && (
+                        {selectedContent === "note" && (
 
-                        <NoteEditor
-                            title={noteTitle}
-                            text={noteText}
-                            style={noteStyle}
+                            <NoteEditor
+                                title={noteTitle}
+                                text={noteText}
+                                style={noteStyle}
 
-                            onTitleChange={
-                                setNoteTitle
-                            }
+                                onTitleChange={
+                                    setNoteTitle
+                                }
 
-                            onTextChange={
-                                setNoteText
-                            }
+                                onTextChange={
+                                    setNoteText
+                                }
 
-                            onStyleChange={
-                                setNoteStyle
-                            }
+                                onStyleChange={
+                                    setNoteStyle
+                                }
 
-                            onAdd={addNote}
+                                onAdd={addNote}
 
-                            onCancel={() =>
-                                setSelectedContent(null)
-                            }
-                        />
+                                onCancel={() =>
+                                    setSelectedContent(null)
+                                }
+                            />
 
-                    )}
-
-
-                    {/* PHOTO */}
-
-                    {selectedContent === "photo" && (
-
-                        <PhotoUploader
-                            onAddPhoto={addPhoto}
-                        />
-
-                    )}
+                        )}
 
 
-                    {/* VIDEO */}
+                        {/* PHOTO */}
 
-                    {selectedContent === "video" && (
+                        {selectedContent === "photo" && (
 
-                        <VideoUploader
-                            onAddVideo={addVideo}
-                        />
+                            <PhotoUploader
+                                onAddPhoto={addPhoto}
+                            />
 
-                    )}
-
-
-                    {/* VOICE */}
-
-                    {selectedContent === "voice" && (
-
-                        <VoiceRecorder
-                            onAddVoice={addVoice}
-                        />
-
-                    )}
+                        )}
 
 
-                    {/* LOCATION */}
+                        {/* VIDEO */}
 
-                    {selectedContent === "location" && (
+                        {selectedContent === "video" && (
 
-                        <LocationPicker
-                            onAddLocation={
-                                addLocation
-                            }
-                        />
+                            <VideoUploader
+                                onAddVideo={addVideo}
+                            />
 
-                    )}
+                        )}
 
 
-                    {/* SONG */}
+                        {/* VOICE */}
 
-                    {selectedContent === "song" && (
+                        {selectedContent === "voice" && (
 
-                        <SongPicker
-                            onAddSong={
-                                addSong
-                            }
-                        />
+                            <VoiceRecorder
+                                onAddVoice={addVoice}
+                            />
 
-                    )}
+                        )}
 
 
-                    {/* GIFT */}
+                        {/* LOCATION */}
 
-                    {selectedContent === "gift" && (
+                        {selectedContent === "location" && (
 
-                        <GiftPicker
-                            onAddGift={
-                                addGift
-                            }
-                        />
+                            <LocationPicker
+                                onAddLocation={
+                                    addLocation
+                                }
+                            />
 
-                    )}
-
-
-                    {/* DRAWING */}
-
-                    {selectedContent === "drawing" && (
-
-                        <DrawingUploader
-                            onAddDrawing={
-                                addDrawing
-                            }
-                        />
-
-                    )}
+                        )}
 
 
+                        {/* SONG */}
+
+                        {selectedContent === "song" && (
+
+                            <SongPicker
+                                onAddSong={
+                                    addSong
+                                }
+                            />
+
+                        )}
+
+
+                        {/* GIFT */}
+
+                        {selectedContent === "gift" && (
+
+                            <GiftPicker
+                                onAddGift={
+                                    addGift
+                                }
+                            />
+
+                        )}
+
+
+                        {/* DRAWING */}
+
+                        {selectedContent === "drawing" && (
+
+                            <DrawingUploader
+                                onAddDrawing={
+                                    addDrawing
+                                }
+                            />
+
+                        )}
+
+                    </div>
                     {/* CONTENT TYPE GRID */}
 
                     <div className="content-type-grid">
@@ -879,9 +896,9 @@ function AddContent() {
                                     type="button"
 
                                     className={`content-type-card ${selectedContent ===
-                                            content.id
-                                            ? "selected"
-                                            : ""
+                                        content.id
+                                        ? "selected"
+                                        : ""
                                         }`}
 
                                     onClick={() =>
